@@ -7,7 +7,7 @@ include_once "menu.php";
 
 ?>
 
-<div id=test> Recherche d'un adversaire en cours...</div>
+<div id=test> Recherche d'un adversaire en cours... </div>
 
 <script>
 
