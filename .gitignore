@@ -1,0 +1,9 @@
+.project
+.buildpath
+.settings/org.eclipse.php.core.prefs
+admin/.htaccess
+admin/.htpasswd
+.settings/org.eclipse.wst.common.project.facet.core.xml
+config/sqlupec.ini
+config/sqlbase.ini
+config/sql.ini
