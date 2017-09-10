@@ -35,11 +35,7 @@ if (! joueur::connected ()) {
     }
     
     
-   
-
-    
-    
-    $partie->set_coup(2,$coup);
+  //  $partie->set_coup(2,$coup);
 }
 
 
