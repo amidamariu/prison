@@ -187,7 +187,7 @@ echo "<br> historique récent de ce joueur : <br>";
 
 echo "<table>";
 
-$hist = get_historique ( $IDadv);
+$hist = get_historique( $IDadv);
 
 foreach ( $hist as $result ) {
 	echo "<tr>";
@@ -275,7 +275,6 @@ function get_historique($id)
 $bdd = Connexion::bdd();
 
 $req = $bdd->query('SELECT * FROM listeparties WHERE Joueur1 ='.$id.' OR Joueur2 ='.$id.' ORDER BY date DESC LIMIT '.$limite);
-// var_dump($req);
 if($req)
 {
 return $req->fetchAll();

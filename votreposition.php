@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once "class/connexion_class.php";
 include_once "class/joueur_class.php";
 include_once 'html/entete.php';
@@ -14,7 +14,7 @@ else
 
 $jou = new joueur($_SESSION['userid']);
 
-echo "vous êtes dans la catégorie ".$jou->get_categorie()." vo us êtes en position ".$jou->get_position();
+echo "vous êtes dans la catégorie ".$jou->get_categorie()." vous êtes en position ".$jou->get_position();
 
 
 }
