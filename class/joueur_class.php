@@ -284,22 +284,30 @@ return($rep->fetch());
   
   public function find_adv()
   {
-      $bdd = Connexion::bdd();
-      $sql = "UPDATE `attente` SET forme =".$this->get_id()." WHERE forme is null LIMIT 1";
-      $rep = $bdd->query($sql);
+  	$bdd = Connexion::bdd();
+  	$sql = "LOCK TABLES `attente`WRITE";
+  	$rep = $bdd->query($sql);
 
-      $req = $bdd->query('SELECT * FROM attente WHERE forme='.$this->get_id());
+      $req = $bdd->query('SELECT * FROM attente WHERE 1 LIMIT 1');
       $reponse = $req->fetch();
       $nb = $reponse["id"];
       
+  
+      
       if($reponse == null)
       {
+      	$sql = "UNLOCK TABLES";
+      	$rep = $bdd->query($sql);
       return 0;
       }
       else 
       {
     
-          $req = $bdd->query('DELETE FROM attente WHERE forme='.$this->get_id());
+      	$req = $bdd->query('DELETE FROM attente WHERE id='.$nb);
+          
+          $sql = "UNLOCK TABLES";
+          $rep = $bdd->query($sql);
+          
          return $nb;
         
           
