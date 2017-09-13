@@ -273,6 +273,12 @@ return($rep->fetch());
   	$sql = 'INSERT INTO attente (Id) VALUES('.$this->get_id().')';
   	$rep = $bdd->query($sql);
 }
+
+
+
+
+
+
   
   public function unset_attente()
   { 
@@ -314,6 +320,19 @@ return($rep->fetch());
           
       }
   }
+  
+  
+  
+  public function Set_connexion()
+  {
+  	
+  	$bdd = Connexion::bdd();
+  	  	
+  	$sql = 'UPDATE `listejoueurs` SET `Datederconnexion` =NOW() WHERE Id='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  
+  }
+  
   
   
   public function get_mdp()
@@ -381,6 +400,8 @@ $donnee = $rep->fetch();
   		return $donnee["auto"];
 
   }
+  
+
   
   public function get_stat()
   {

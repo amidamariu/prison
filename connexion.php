@@ -35,7 +35,7 @@ if (joueur::connected ()) {
 				// $jou = joueur::joueur_by_mail($_POST['mail']);
 				
 				$_SESSION ['userid'] = $jou->get_id ();
-				
+				$jou->Set_connexion();
 				echo "Connexion réussie, redirection vers le menu";
 				header ( 'Refresh: 3; url=index.php' );
 				ob_flush ();
