@@ -56,6 +56,12 @@ else
   	
   }
   
+  public static function disconnect()
+  {
+  	unset($_SESSION['SessionID']);
+  	
+  }
+  
   
     public static function joueur_by_Pseudo($Pseudo)
   {
@@ -144,6 +150,36 @@ else
   	return  $reponse["Nb"];
   	
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  public static function ajouter($Email, $Pseudo, $Motdepasse)
+  {
+  	$bdd = Connexion::bdd();
+  	
+  	$MDPHache = password_hash($Motdepasse,PASSWORD_BCRYPT,['cost' => 13]);
+  	$Datedujour = date("Y-m-d H:i:s");
+  	
+  	$req = $bdd->prepare('INSERT INTO `listejoueurs` (`Email`, `Pseudo`, `Motdepasse`, `Dateinscription`)
+VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription)');
+  	$req->execute(array(
+  			'Email' => $Email,
+  			'Pseudo' => $Pseudo,
+  			'Motdepasse' => $MDPHache,
+  			'Dateinscription' => $Datedujour
+  	)) or die(print_r($req->errorInfo()));
+  	
+  	$req -> closeCursor();
+  	
+  }
+  
+  
   
     
   public function get_position()

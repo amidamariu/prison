@@ -4,9 +4,11 @@ include_once 'html/entete.php';
 require_once 'menu.php';
 
 
-if($_GET['from']=="eprel")
+if(isset($_GET['eprellogin']) && isset($_GET['mail']) )
 {
-	echo "rerer";
+	echo $_GET['eprellogin'];
+	echo $_GET['mail'];
+	
 }
 
 include 'html/end.php';

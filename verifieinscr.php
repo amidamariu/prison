@@ -17,7 +17,7 @@ if(isset($_POST['emailainscrire'], $_POST['pseudonyme']) and $_POST['pseudonyme'
 	        $_POST['emailainscrire'] = strip_tags($_POST['emailainscrire']);
 	        $_POST['pseudonyme'] = strip_tags($_POST['pseudonyme']);
 			$motdepasse=random_str(6);
-	        ajoutejoueur($_POST['emailainscrire'], $_POST['pseudonyme'], $motdepasse);
+	        joueur::ajouter($_POST['emailainscrire'], $_POST['pseudonyme'], $motdepasse);
 			$form = false;
 			envoimailinscr($_POST['emailainscrire'], $_POST['pseudonyme'], $motdepasse);
          ?>
