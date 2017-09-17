@@ -52,7 +52,7 @@ else
   
   public static function connected()
   {
-  	return isset($_SESSION['userid']);
+  	return isset($_SESSION['SessionID']);
   	
   }
   
@@ -114,14 +114,22 @@ else
       public static function joueur_by_session()
   {
   
-if(isset($_SESSION['userid']))
-{
-	return new joueur($_SESSION['userid']);
-}
-else
-{
-	return null;
-}
+  		$bdd = Connexion::bdd();
+  		$req = $bdd->prepare('SELECT * FROM `listejoueurs` WHERE `SessionID` = ?');
+  		$req->execute(array($_SESSION['SessionID'])) or die(print_r($req->errorInfo()));
+  		$donnees= $req->fetch();
+  		
+  		$req -> closeCursor();
+  		
+  		if(isset($donnees['Id']))
+  		{
+  			return new joueur($donnees['Id']);
+  		}
+  		else
+  		{
+  			return null;
+  		}
+  	
 
 	  
   }
@@ -332,6 +340,17 @@ return($rep->fetch());
   	$rep = $bdd->query($sql);
   
   }
+  
+  public function Get_Sessionid()
+  {
+  	
+  	$bdd = Connexion::bdd();
+  	$id = uniqid();
+  	$sql = 'UPDATE `listejoueurs` SET `SessionID` ="'.$id.'" WHERE Id='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  	return $id;
+  }
+  
   
   
   

@@ -5,7 +5,7 @@ include_once 'fonction/fonctions.php';
 include_once "class/joueur_class.php";
 session_start();
 
-if(!isset($_SESSION['mail']))
+if(!joueur::connected())
 {
 	?>
 	

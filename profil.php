@@ -2,7 +2,7 @@
 
 include_once 'html/entete.php';
 include_once "menu.php";
-if(!isset($_SESSION['mail']))
+if(!joueur::connected())
 {
 	?>
 	

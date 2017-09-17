@@ -31,11 +31,8 @@ if (joueur::connected ()) {
 				// Si le mot de passe es bon, on ne vas pas afficher le formulaire
 				$form = false;
 				// On enregistre son pseudo dans la session username et son identifiant dans la session userid
-				$_SESSION ['mail'] = $_POST ['login'];
-				// $jou = joueur::joueur_by_mail($_POST['mail']);
-				
-				$_SESSION ['userid'] = $jou->get_id ();
-				$jou->Set_connexion();
+				$jou->Set_connexion();	
+				$_SESSION ['SessionID']=$jou->Get_Sessionid();
 				echo "Connexion réussie, redirection vers le menu";
 				header ( 'Refresh: 3; url=index.php' );
 				ob_flush ();
