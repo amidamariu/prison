@@ -82,6 +82,29 @@ else
 	  
   }
   
+  
+  
+  public static function joueur_by_eprelID($eprelID)
+  {
+  	$bdd = Connexion::bdd();
+  	$req = $bdd->prepare('SELECT * FROM `listejoueurs` WHERE `eprelid` = ?');
+  	$req->execute(array($eprelID)) or die(print_r($req->errorInfo()));
+  	$donnees= $req->fetch();
+  	
+  	$req -> closeCursor();
+  	if(isset($donnees['Id']))
+  	{
+  		return new joueur($donnees['Id']);
+  	}
+  	else
+  	{
+  		return null;
+  	}
+  	
+  }
+  
+  
+  
   public static function joueur_by_code($code)
   {
   	$bdd = Connexion::bdd();
@@ -100,6 +123,23 @@ else
   		return null;
   	}
   }
+  
+  
+  public static function session_for_eprel($login,$mail)
+  {
+  	$jou = joueur::joueur_by_eprelID($login);
+  	if( $jou != null)
+  	{
+  		return $jou->Get_Sessionid();
+  	}
+  	else
+  	{
+  		joueur::ajouter($mail,$login,"rezrezrze",$login);
+  		$jou = joueur::joueur_by_Pseudo($login);
+  		return $jou->Get_Sessionid();
+  	}
+  }
+  
   
   
   public function ChangeMdp($mdpchange)
@@ -159,20 +199,21 @@ else
   
   
   
-  public static function ajouter($Email, $Pseudo, $Motdepasse)
+  public static function ajouter($Email, $Pseudo, $Motdepasse, $eprel = NULL)
   {
   	$bdd = Connexion::bdd();
   	
   	$MDPHache = password_hash($Motdepasse,PASSWORD_BCRYPT,['cost' => 13]);
   	$Datedujour = date("Y-m-d H:i:s");
   	
-  	$req = $bdd->prepare('INSERT INTO `listejoueurs` (`Email`, `Pseudo`, `Motdepasse`, `Dateinscription`)
-VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription)');
+  	$req = $bdd->prepare('INSERT INTO `listejoueurs` (`Email`, `Pseudo`, `Motdepasse`, `Dateinscription`,`eprelid`)
+VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription,:eprelid)');
   	$req->execute(array(
   			'Email' => $Email,
   			'Pseudo' => $Pseudo,
   			'Motdepasse' => $MDPHache,
-  			'Dateinscription' => $Datedujour
+  			'Dateinscription' => $Datedujour,
+  			'eprelid' => $eprel
   	)) or die(print_r($req->errorInfo()));
   	
   	$req -> closeCursor();
