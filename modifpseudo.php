@@ -16,7 +16,7 @@ echo "vous devez être connecter pour accéder à cette page";
 else
 {
 $jou = joueur::joueur_by_session();
-	
+
 if (isset($_POST['pseudonyme'], $_POST['motdepasse']) )
 {
 	//On sécurise les données rentrées (il y a peut-être plus à faire que juste strip_tags)
@@ -80,11 +80,11 @@ else
 
 <form method="post" action="modifpseudo.php" name="modifpseudo"><br>
   <br>
-Nouvel Identifiant/Pseudo&nbsp; <input maxlength="32" size="32" name="pseudonyme" value=<?php echo $_POST['pseudonyme']; ?>> 
+Nouvel Identifiant/Pseudo&nbsp; <input maxlength="32" size="32" name="pseudonyme" value=<?php if ( isset($_POST['pseudonyme'])) {echo $_POST['pseudonyme'];} ?>> 
 au moins 6 caractères et alphanumériques uniquement.
 <br>
 <br>
-Mot de passe&nbsp; <input maxlength="20" size="20" name="motdepasse" type="password" value=<?php echo $_POST['motdepasse']; ?>> 
+Mot de passe&nbsp; <input maxlength="20" size="20" name="motdepasse" type="password" value=<?php if ( isset($_POST['motdepasse'])) {echo $_POST['motdepasse'];}?>> 
 <br>
   <br>
   <br>

@@ -125,7 +125,7 @@ else
   }
   
   
-  public static function session_for_eprel($login,$mail)
+  public static function session_for_eprel($login)
   {
   	$jou = joueur::joueur_by_eprelID($login);
   	if( $jou != null)
@@ -134,7 +134,7 @@ else
   	}
   	else
   	{
-  		joueur::ajouter($mail,$login,"rezrezrze",$login);
+  		joueur::ajouter(NULL,$login,"rezrezrze",$login);
   		$jou = joueur::joueur_by_Pseudo($login);
   		return $jou->Get_Sessionid();
   	}
@@ -428,7 +428,14 @@ return($rep->fetch());
   	return $id;
   }
   
-  
+  public function is_eprel()
+  {
+  	$bdd = Connexion::bdd();
+  	$sql = 'SELECT * FROM listejoueurs WHERE Id='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  	$donnee = $rep->fetch();
+  	return ($donnee["eprelid"]!=NULL);
+  }
   
   
   public function get_mdp()

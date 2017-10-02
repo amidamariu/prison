@@ -96,7 +96,6 @@ Répéter mot de passe&nbsp; <input maxlength="20" size="20" name="motdepasse2" 
 <?php
 }
 
-
 }
 include_once 'html/end.php';
 ?>
