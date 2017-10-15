@@ -20,7 +20,7 @@ if(is_numeric($var))
 $_SESSION ['SessionID'] = joueur::session_for_eprel($var);	
 
 echo "Connexion réussie, redirection vers le menu";
-//header ( 'Refresh: 3; url=index.php' );
+header ( 'Refresh: 3; url=index.php' );
 ob_flush ();
 }
 else
