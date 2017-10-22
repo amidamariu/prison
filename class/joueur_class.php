@@ -127,7 +127,9 @@ else
   
   public static function session_for_eprel($login)
   {
+
   	$jou = joueur::joueur_by_eprelID($login);
+
   	if( $jou != null)
   	{
   		return $jou->Get_Sessionid();
