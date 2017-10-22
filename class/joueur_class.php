@@ -469,17 +469,25 @@ $donnee = $rep->fetch();
   return $donnee["score_moyen"];
   }
   
+  public function get_last_change()
+  {
+  	$bdd = Connexion::bdd();
+  	$sql = 'SELECT * FROM listejoueurs WHERE Id='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  	$donnee = $rep->fetch();
+  	return $donnee["date_changement"];
+  }
+  
+  
   public function change_pseudo($pseudo)
   {
   	
   	$bdd = Connexion::bdd();
   	
-  	$req = $bdd->prepare('UPDATE `listejoueurs` SET `Pseudo` = :pseudonyme WHERE `Id` = :id');
+  	$req = $bdd->prepare('UPDATE `listejoueurs` SET `Pseudo` = :pseudonyme , date_changement = NOW() WHERE `Id` = :id');
   	$req->execute(array('pseudonyme' => $pseudo, 'id' => $this->get_id())) or die(print_r($req->errorInfo()));
   	
   	$req -> closeCursor();
-  	
-  	
   	
   }
   

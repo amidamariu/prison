@@ -253,7 +253,7 @@ $adv->get_stat();
 
 function get_data_from_ini_file($type,$var)
 {
-	$fichier = 'config/sql.ini';
+	$fichier = 'config/conf.ini';
 	if(file_exists($fichier)) {
 	$config = parse_ini_file($fichier, true);
 		
@@ -264,7 +264,7 @@ function get_data_from_ini_file($type,$var)
 function get_historique($id)
 {
 
-        $fichier = 'config/sql.ini';
+        $fichier = 'config/conf.ini';
         if(file_exists($fichier)) {
         $config = parse_ini_file($fichier, true);
      
@@ -303,7 +303,7 @@ function get_historique2($id,$id2)
 {
 
 
-        $fichier = 'config/sql.ini';
+        $fichier = 'config/conf.ini';
         if(file_exists($fichier)) {
         $config = parse_ini_file($fichier, true);
      
@@ -369,7 +369,7 @@ function random_str($nbr)
 
 function getGain($joueur,$complice)
 {
-    $fichier = 'config/sql.ini';
+    $fichier = 'config/conf.ini';
         if(file_exists($fichier)) {
         $config = parse_ini_file($fichier, true);
      

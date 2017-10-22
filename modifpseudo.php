@@ -3,12 +3,6 @@ include_once 'fonction/fonctions.php';
 include_once 'html/entete.php';
 include_once "menu.php";
 
-?>
-<p>Modification de l'identifiant</p>
-
-<?php
-
-
 if(!joueur::connected())
 {
 echo "vous devez être connecter pour accéder à cette page";
@@ -16,6 +10,24 @@ echo "vous devez être connecter pour accéder à cette page";
 else
 {
 $jou = joueur::joueur_by_session();
+$date1 = new DateTime($jou->get_last_change());
+$date2 = new DateTime(date("Y-m-d H:i:s"));
+$interval = $date2->diff($date1);
+
+$fichier = 'config/conf.ini';
+
+if(file_exists($fichier)) {
+	$config = parse_ini_file($fichier, true);
+	
+	$limite = $config['pseudo']['limite'];
+}
+
+if( $interval->format('%a') < $limite )
+{
+	echo "Uniquement un changement tout les ".$limite." jours <br> Vous pourrez de nouveau le changer dans ".($limite - $interval->format('%a'))." jours";
+}
+else
+{
 
 if (isset($_POST['pseudonyme'], $_POST['motdepasse']) )
 {
@@ -91,6 +103,7 @@ Mot de passe&nbsp; <input maxlength="20" size="20" name="motdepasse" type="passw
   <span style="text-decoration: underline;"></span><input name="envoyer" value="Envoyer" type="submit">
 </form>
 <?php
+}
 }
 }
 include_once 'html/end.php';
