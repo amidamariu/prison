@@ -84,6 +84,7 @@ $donnee = $rep->fetch();
   {
 	return $this->_nom;
   }
+ 
   
       public function jouer($joueur) 
   {

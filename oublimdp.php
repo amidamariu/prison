@@ -14,7 +14,7 @@ Mot de passe oublié : deux étapes.<br>
 <?php
 if (isset($_POST['email']))
 {
-	
+	$email = $_POST['email'];
 	$jou = joueur::joueur_by_mail($email);
 	//On verifie si l'email est dans la base auquel cas on y ajoute un code sur la colonne Codeoublimdp, 
 	// et aussi envoyé par email, associé au pseudo
