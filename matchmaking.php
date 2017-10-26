@@ -68,6 +68,9 @@ function xmlstat()
     $xml .= '<trouve>';
     $xml .= 'non';
     $xml .= '</trouve>';
+    $xml .= '<createur>';
+    $xml .= 'oui';
+    $xml .= '</createur>';
  /*   $xml .= '<adv>';
     $xml .= 'johann';
     $xml .= '</adv>';

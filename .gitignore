@@ -11,3 +11,8 @@ config/sql1and1.ini
 .settings/org.eclipse.core.resources.prefs
 prison (2).sql
 prison.zip
+/.metadata
+*.prefs
+*.lock
+*.tii
+V11.rar

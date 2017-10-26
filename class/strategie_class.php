@@ -320,9 +320,6 @@ $donnee = $rep->fetch();
 			}
 		}	
 		
-		
-		echo "param1 : ".$param."<br>";
-				echo "param2 : ".$param2."<br>";
 
 				if($param2 == 0)
 				{
@@ -455,9 +452,7 @@ $donnee = $rep->fetch();
 	else
 	{
 		$param = 1 - $param/400;
-	}
-	echo "<br> param: ".$param."<br>";
-	
+	}	
 	
 		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
 		$reponse = $req->fetch();

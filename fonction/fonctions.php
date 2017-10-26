@@ -182,15 +182,24 @@ function historique($IDjou,$IDadv)
 $jou = new joueur($IDjou);
 $adv = new joueur($IDadv);
 
-echo "vous allez jouer contre:" . $adv->get_Pseudo() . "<br>";
-echo "<br> historique récent de ce joueur : <br>";
+echo "Vous allez jouer contre:" . $adv->get_Pseudo() . "<br>";
+echo "<br>Historique récent de toutes les parties de ce joueur : <br>";
 
-echo "<table>";
+echo "<table border=1 cellspacing=0 cellpadding=5>";
 
 $hist = get_historique( $IDadv);
 
+if($hist == NULL)
+{
+	echo "Ce joueur n'a encore jamais joué";
+	echo "<br>";
+}
+else
+{
+echo '<th>Date</th><th>Joueur 1</th><th>Joueur 2</th>';
 foreach ( $hist as $result ) {
 	echo "<tr>";
+	echo '<td>'.$result["date"].'</td>';
 	if($result["Coup1"]==1)
 	{
 	echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur1"]) . "</td>";
@@ -211,15 +220,23 @@ foreach ( $hist as $result ) {
 	echo "</tr>";
 }
 echo "</table>";
+}
 
-
-echo "<br> historique des rencontres avec ce joueur : <br>";
+echo "<br>Historique de vos rencontres avec ce joueur : <br>";
 $hist = get_historique2 ( $IDadv, $IDjou);
 
-echo "<table>";
 
+if($hist == NULL)
+{
+	echo "Vous n'avez encore jamais affronté cet adversaire";
+}
+else
+{
+echo "<table border=1 cellspacing=0 cellpadding=5>";
+echo '<th>Date</th><th>Joueur 1</th><th>Joueur 2</th>';
 foreach ( $hist as $result ) {
 	echo "<tr>";
+	echo '<td>'.$result["date"].'</td>';
 	if($result["Coup1"]==1)
 	{
 		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur1"]) . "</td>";
@@ -240,7 +257,8 @@ foreach ( $hist as $result ) {
 	echo "</tr>";
 }
 echo "</table>";
-
+}
+echo "<br><br>";
 
 $adv->get_stat();
 
@@ -455,7 +473,7 @@ function recupereclassement($inf,$sup)
 {
 	$bdd = Connexion::bdd();
 	
-	$req = $bdd->query('SELECT Pseudo, score_moyen FROM listejoueurs WHERE Nbpartiesjouees >'.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC');
+	$req = $bdd->query('SELECT Pseudo, score_moyen, Nbpartiesjouees FROM listejoueurs WHERE Nbpartiesjouees >'.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC');
 	$donnees = $req->fetchAll();
 	
 	return $donnees;
@@ -468,10 +486,10 @@ function ecrireclassement($inf,$sup)
 	if ($tableau)
 	{
 		echo '<table>';
-		echo '<tr><td>Place</td><td>Nom</td><td>Score moyen</td></tr>';
+		echo '<tr><td>Place</td><td>Nom</td><td>Score moyen</td><td>Parties jouées</td></tr>';
 		for ($i = 0; $i < count($tableau); $i++)
 		{
-			echo '<tr><td>'.strval($i+1).'</td><td>'.$tableau[$i]['Pseudo'].'</td><td>'.$tableau[$i]['score_moyen'].'</td></tr>' ;
+			echo '<tr><td>'.strval($i+1).'</td><td>'.$tableau[$i]['Pseudo'].'</td><td align="center" >'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
 		}
 		echo '<table>';
 	}

@@ -254,7 +254,7 @@ VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription,:eprelid)');
   	$bdd = Connexion::bdd();
   	$sql = 'SET @rank=0';
   	$rep = $bdd->query($sql);
-  	$sql='SELECT * FROM (SELECT @rank:=@rank+1 AS rank, Id, Nbpartiesjouees, score_moyen FROM `listejoueurs` WHERE (Nbpartiesjouees >'.$borneinf.' AND Nbpartiesjouees < '.$bornesup.') ORDER BY score_moyen DESC) AS test WHERE Id='.$this->_id.' ';
+  	$sql='SELECT * FROM (SELECT @rank:=@rank+1 AS rank, Id, Nbpartiesjouees, score_moyen FROM `listejoueurs` WHERE (Nbpartiesjouees >'.$borneinf.' AND Nbpartiesjouees <= '.$bornesup.') ORDER BY score_moyen DESC) AS test WHERE Id='.$this->_id.' ';
   	$rep = $bdd->query($sql);
   	$donnee = $rep->fetch();
   	
@@ -519,11 +519,11 @@ $donnee = $rep->fetch();
   public function get_stat()
   {
   	echo "Parties jouées: " . $this->get_total () . "<br>";
-  	echo "Score moyen: " . $this->get_score_moyen () . "<br>";
+  	echo "Score moyen: " . number_format($this->get_score_moyen (),4). "<br>";
   	echo "Penalités: " . $this->get_auto()."<br>";
-  	echo "Nombre coopération face à une déféction : " . $this->get_nbcoup ( 1, 0 ) . "<br>";
+  	echo "Nombre coopération face à une défection : " . $this->get_nbcoup ( 1, 0 ) . "<br>";
   	echo "Nombre coopération face à une coopération : " . $this->get_nbcoup ( 1, 1 ) . "<br>";
-  	echo "Nombre défection face à une déféction : " . $this->get_nbcoup ( 0, 0 ) . "<br>";
+  	echo "Nombre défection face à une défection : " . $this->get_nbcoup ( 0, 0 ) . "<br>";
   	echo "Nombre défection face à une coopération : " . $this->get_nbcoup ( 0, 1 ) . "<br> <br>";
   }
   

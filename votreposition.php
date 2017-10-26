@@ -12,13 +12,30 @@ if(!joueur::connected())
 else
 {
 
-$jou = new joueur($_SESSION['userid']);
+$jou = joueur::joueur_by_session();
+$cat = $jou->get_categorie();
+switch ($cat) {
+	case 1:
+		$descri = " (moins de 11 parties)";
+		break;
+	case 2:
+		$descri = " (entre 11 et 100 parties)";
+		break;
+	case 3:
+		$descri = " (entre 101 et 1000 parties)";
+		break;
+	case 4:
+		$descri = " (plus de 1000 parties)";
+		break;
+}
 
-echo "vous êtes dans la catégorie ".$jou->get_categorie()." vous êtes en position ".$jou->get_position();
 
-
+echo "Vous êtes dans la catégorie ".$cat.$descri." vous êtes en position ".$jou->get_position();
+echo "<br> Vous avez joué ". $jou->get_total ()." parties";
 }
 	
 include_once 'html/end.php';
+
+
 ?>
 
