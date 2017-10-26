@@ -12,8 +12,8 @@ else
 ?>
 
 
-<a href="jouerstrat.php">Jouer contre une stategie</a><br>
-<a href="jouer.php">Jouer contre un joueur</a><br>
+<a href="jouer.php?type=strat">Jouer contre une stategie</a><br>
+<a href="jouer.php?type=joueur">Jouer contre un joueur</a><br>
 
 
 <?php

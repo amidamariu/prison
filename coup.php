@@ -10,7 +10,7 @@ if (! joueur::connected ()) {
 } else {
 	
 	$jou = joueur::joueur_by_session();
-	$partie = partieencours::find($jou->get_id());
+	$partie = partieencours::find_last($jou->get_id());
 	if($partie->get_joueur(1)==$jou->get_id())
 	{
 		$num= 1 ;	

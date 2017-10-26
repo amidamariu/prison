@@ -1,10 +1,16 @@
 <?php
 include_once 'fonction/fonctions.php';
 include_once 'class/joueur_class.php';
+include_once 'class/strategie_class.php';
+include_once 'class/partieencours_class.php';
 include_once 'html/entete.php';
 include_once "menu.php";
 
 
+
+
+if($_GET['type']!="strat")
+{
 ?>
 
 <div id=test> Recherche d'un adversaire en cours...</div>
@@ -77,8 +83,26 @@ xhr.addEventListener('readystatechange', function() {
 
 
 <?php
-include_once 'html/end.php';
+}
+else
+{
+	$strat = new strategie();
+	$partie = partieencours::ajouter($jou->get_id(),$strat->get_id_joueur());
 
+
+?>
+
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'traitementpartie.php?num=<?php echo $partie->get_id(); ?>',true);
+xhr.send(null);
+var cmd = "window.location='jouerjoueur.php?num=<?php echo $partie->get_id(); ?>'";
+setTimeout(cmd,1000);
+</script>
+
+<?php
+}
+include_once 'html/end.php';
 ?>
 
               

@@ -256,10 +256,10 @@ public function get_auto($num)
 
 
 
-public static function find($joueur2)
+public static function find_last($joueur2)
 {
 	$bdd = Connexion::bdd();
-	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' ';
+	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' ORDER BY date DESC';
 	$rep = $bdd->query($sql);
 	$donnee = $rep->fetch();
 	if($donnee==null)
@@ -271,6 +271,23 @@ public static function find($joueur2)
 	return new partieencours($donnee["Id"]);
 	}
 }
+
+public static function find_new($joueur2)
+{
+	$bdd = Connexion::bdd();
+	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' AND OK1=0 AND OK2 ORDER BY date DESC';
+	$rep = $bdd->query($sql);
+	$donnee = $rep->fetch();
+	if($donnee==null)
+	{
+		return null;
+	}
+	else
+	{
+		return new partieencours($donnee["Id"]);
+	}
+}
+
 
 }
 ?>

@@ -4,7 +4,7 @@ include_once "class/joueur_class.php";
 include_once "class/partieencours_class.php";
 
 $jou=joueur::joueur_by_session();
-$partie = partieencours::find($jou->get_id());
+$partie = partieencours::find_last($jou->get_id());
 
 if($jou->get_id()== $partie->get_joueur(1))
 {

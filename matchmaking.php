@@ -20,7 +20,7 @@ if($adv == 0)
 	{
 	sleep($latence);
 	$t2=time();
-	$partie = partieencours::find($jou->get_id());
+	$partie = partieencours::find_new($jou->get_id());
 	if( $partie != null)
 	{
 	$partie->set_ok(2);
