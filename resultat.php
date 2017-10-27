@@ -44,6 +44,10 @@ echo "le coup de votre adversaire a été généré automatiquement <br> ";
 
 echo "Votre gain : " . getGain ( $partie->get_coup($numjou) , $partie->get_coup($numadv)) . "<br>";
 echo "Gain complice: " . getGain ( $partie->get_coup($numadv), $partie->get_coup($numjou)) . "<br>";
+
+echo '<form method="post" action="index.php" >
+<input type="submit" value="Rejouer" />
+</form>';
 }
 else
 {

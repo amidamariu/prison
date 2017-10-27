@@ -13,7 +13,11 @@ else
 {
 
 $jou = joueur::joueur_by_session();
+
+if($jou->get_position()!=NULL)
+{
 $cat = $jou->get_categorie();
+
 switch ($cat) {
 	case 1:
 		$descri = " (moins de 11 parties)";
@@ -32,6 +36,11 @@ switch ($cat) {
 
 echo "Vous êtes dans la catégorie ".$cat.$descri." vous êtes en position ".$jou->get_position();
 echo "<br> Vous avez joué ". $jou->get_total ()." parties";
+}
+else
+{
+echo "Vous n'avez encore jamais joué";
+}
 }
 	
 include_once 'html/end.php';

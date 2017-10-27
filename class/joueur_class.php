@@ -229,7 +229,11 @@ VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription,:eprelid)');
   {
   	
   	$cat = $this->get_categorie();
-  	
+	
+	if($cat == NULL)
+	{
+		return NULL;
+	}
   	if($cat == 1)
   	{
   		$borneinf = 0;
@@ -255,7 +259,7 @@ VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription,:eprelid)');
   	$sql = 'SET @rank=0';
   	$rep = $bdd->query($sql);
   	$sql='SELECT * FROM (SELECT @rank:=@rank+1 AS rank, Id, Nbpartiesjouees, score_moyen FROM `listejoueurs` WHERE (Nbpartiesjouees >'.$borneinf.' AND Nbpartiesjouees <= '.$bornesup.') ORDER BY score_moyen DESC) AS test WHERE Id='.$this->_id.' ';
-  	$rep = $bdd->query($sql);
+	$rep = $bdd->query($sql);
   	$donnee = $rep->fetch();
   	
   	return $donnee["rank"];

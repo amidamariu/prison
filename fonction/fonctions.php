@@ -473,7 +473,7 @@ function recupereclassement($inf,$sup)
 {
 	$bdd = Connexion::bdd();
 	
-	$req = $bdd->query('SELECT Pseudo, score_moyen, Nbpartiesjouees FROM listejoueurs WHERE Nbpartiesjouees >'.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC');
+	$req = $bdd->query('SELECT Pseudo, score_moyen, Nbpartiesjouees FROM listejoueurs WHERE Nbpartiesjouees >='.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC');
 	$donnees = $req->fetchAll();
 	
 	return $donnees;

@@ -48,9 +48,9 @@ xhr.addEventListener('readystatechange', function() {
 
     		if(createur==='oui')
     		{
-    			var xhr2 = new XMLHttpRequest();
-    			xhr2.open('GET', 'traitementpartie.php?num='+partie,true);
-    			xhr2.send(null);
+    		//	var xhr2 = new XMLHttpRequest();
+    		//	xhr2.open('GET', 'traitementpartie.php?num='+partie,true);
+    		//	xhr2.send(null);
     		}
 
     		if(type ==='J')

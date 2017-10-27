@@ -38,7 +38,7 @@ if (isset($_POST['pseudonyme'], $_POST['motdepasse']) )
 	if (verifiepseudo($_POST['pseudonyme']))
 		//il faut que le nouveau pseudonyme corresponde au format correct et n'existe pas déjà
 	{ 
-		if ($jou->verif_mdp($_POST['motdepasse']))
+		if ($jou->verif_mdp($_POST['motdepasse']) || $jou->is_eprel())
 				//vérification que c'est le bon mot de passe
 				//il faut sans doute limiter le nombre de mot de passe incorrects d'affilé pour un même email, 
 				//pour éviter les tentatives de hackage.

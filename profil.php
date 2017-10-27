@@ -17,9 +17,8 @@ else
 	if(!$jou->is_eprel())
 	{
 echo ' <a href="modifmdp.php">Modifier mot de passe</a><br>';
-echo '<a href="modifpseudo.php">Modifier pseudo</a><br>';
 	}
-
+echo '<a href="modifpseudo.php">Modifier pseudo</a><br>';
 echo "vos statisiques<br>";
 $jou = joueur::joueur_by_session();
 $jou->get_stat();

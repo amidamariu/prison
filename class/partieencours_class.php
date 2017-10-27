@@ -30,6 +30,14 @@ VALUES(:Id, :joueur1, :joueur2, :date)');
   			'date' => $Date
   	)) or die(print_r($req->errorInfo()));
   	$req -> closeCursor();
+	
+$ch = curl_init();
+ 
+curl_setopt($ch, CURLOPT_URL, 'http://dilemme-prisonnier.fr/V12/traitementpartie.php?num='.$id);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1000);
+ 
+curl_exec($ch);
+curl_close($ch);
   	
   	return $partie;
   }

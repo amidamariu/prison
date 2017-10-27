@@ -16,3 +16,6 @@ prison.zip
 *.lock
 *.tii
 V11.rar
+config/sqlupoec.ini
+index2.php
+partieencours_class.php

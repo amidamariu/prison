@@ -3,6 +3,7 @@ ob_start();
 include_once 'fonction/fonctions.php';
 include_once 'html/entete.php';
 include_once "menu.php";
+  
 
 if(joueur::connected())
 {
