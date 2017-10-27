@@ -55,13 +55,13 @@ xhr.addEventListener('readystatechange', function() {
 
     		if(type ==='J')
     		{
-            div.innerHTML = 'adversaire trouvé ! <br> Vous allez affronter '+adv+'! <br> <br> Redirection vers la partie '+partie+' dans 5 secondes';
+            div.innerHTML = 'adversaire trouvé ! <br> Vous allez affronter '+adv+'! <br> <br> Redirection vers la partie dans 5 secondes';
             var cmd = "window.location='jouerjoueur.php?num="+partie+"'";
             setTimeout(cmd,5000);
     		}
     		if(type === 'S')
     		{
-    		div.innerHTML = 'Aucun joueur connnecté, partie contre une stratégie ! <br> Vous allez affronter '+adv+'! <br> <br> Redirection vers la partie '+partie+' dans 5 secondes';
+    		div.innerHTML = 'Aucun joueur connnecté, partie contre une stratégie ! <br> Vous allez affronter '+adv+'! <br> <br> Redirection vers la partie dans 5 secondes';
     	    var cmd = "window.location='jouerjoueur.php?num="+partie+"'";
     	    setTimeout(cmd,5000);
     		}
