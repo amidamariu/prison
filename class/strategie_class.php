@@ -73,6 +73,16 @@ $donnee = $rep->fetch();
   	return new strategie($donnee["id"]);
   }
   
+  public function get_desc()
+  {
+  	$bdd = Connexion::bdd();
+  	$sql = 'SELECT * FROM listestrategies WHERE id_joueur='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  	$donnee = $rep->fetch();
+  	return $donnee["Description"];
+  }
+  
+  
       public function get_id_joueur() 
   {
 

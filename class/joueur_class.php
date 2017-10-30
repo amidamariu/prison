@@ -222,7 +222,19 @@ VALUES(:Email, :Pseudo, :Motdepasse, :Dateinscription,:eprelid)');
   	
   }
   
-  
+  public static function get_atifs()
+  {
+  	$bdd = Connexion::bdd();
+  	
+  	$sql ='SELECT COUNT(*) AS Nb FROM listejoueurs WHERE derniere_action > SUBTIME(NOW(),"0:1:0.000000")';
+  	$req = $bdd->query($sql);
+  	$reponse = $req->fetch();
+  	$param = $reponse["Nb"];
+  	
+return $param;
+  	
+  	
+  }
   
     
   public function get_position()
@@ -423,6 +435,17 @@ return($rep->fetch());
   	$rep = $bdd->query($sql);
   
   }
+  
+  public function Set_action()
+  {
+  	
+  	$bdd = Connexion::bdd();
+  	
+  	$sql = 'UPDATE `listejoueurs` SET `derniere_action` =NOW() WHERE Id='.$this->_id.' ';
+  	$rep = $bdd->query($sql);
+  	
+  }
+  
   
   public function Get_Sessionid()
   {

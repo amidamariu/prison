@@ -33,7 +33,7 @@ VALUES(:Id, :joueur1, :joueur2, :date)');
 	
 $ch = curl_init();
  
-curl_setopt($ch, CURLOPT_URL, 'http://dilemme-prisonnier.fr/V12/traitementpartie.php?num='.$id);
+curl_setopt($ch, CURLOPT_URL, 'http://127.0.0.1/prison/traitementpartie.php?num='.$id);
 curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1000);
  
 curl_exec($ch);

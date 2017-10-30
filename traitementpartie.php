@@ -13,12 +13,12 @@ include_once "class/partieencours_class.php";
 	sleep($latence+$DureeMax+$DureePartie); //on attend delai 
 	if($partie->get_coup(1)==NULL)
 	{
-	$partie->set_coup(1,0);
+	$partie->set_coup(1,rand(0,1));
 	$partie->set_auto(1,TRUE);
 	}
 	if($partie->get_coup(2)==NULL)
 	{
-	$partie->set_coup(2,0);
+	$partie->set_coup(2,rand(0,1));
 	$partie->set_auto(2,TRUE);
 	}
 	$partie->stock();

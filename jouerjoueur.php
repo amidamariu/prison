@@ -10,7 +10,6 @@ if (! joueur::connected ()) {
 } else {
 	
 	$jou = joueur::joueur_by_session();
-    echo "partie numéro :".$_GET['num'];
     $partie = new partieencours($_GET['num']);
     
     if($jou->get_id()===$partie->get_joueur(1))
@@ -27,6 +26,9 @@ if (! joueur::connected ()) {
     	$strat = strategie::strat_by_id_joueur($adv->get_id());
     	$coupstrat = $strat->jouer($jou->get_id());
     	$partie->set_coup(2, $coupstrat);
+    	
+    	echo '<table border=1 cellspacing=0 cellpadding=5><td>'.$strat->get_desc().'</td></table>';
+    	
     }
     echo "<br> Statistiques générales de ce joueur : <br>";
     historique($jou->get_id(),$adv->get_id());

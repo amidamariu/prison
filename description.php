@@ -62,7 +62,7 @@ echo 'Le jeu du prisonnier est extrêmement simple : vous rencontrez d\'autres j
 echo 'Le nombre de points que vous gagnez à chaque rencontre dépend du résultat du croisement de l\'action de jeu de l\'autre joueur ou de la stratégie, et de votre propre action de jeu comme indiqué dans le tableau ci-dessous.<br>';
 echo 'Le but du jeu est d\'obtenir le meilleur score moyen par partie avec le plus grand nombre de parties.<br>';
 echo 'Le meilleur joueur sera celui qui aura le plus grand score moyen (score total divisé par le nombre de parties jouées) dans la catégorie la plus haute.<br>';
-echo 'Lors des rencontres, si vous mettez trop de temps à jouer, un coup généré aléatoirement sera exécuté à votre place<br>';
+echo 'Lors des rencontres, si vous mettez trop de temps à jouer, un coup généré aléatoirement sera exécuté à votre place.<br>';
 echo '<br>';
 echo 'Tableau des points que vous gagnez selon le croisement des actions de jeu :<br>';
 echo '<table border=1 cellspacing=0 cellpadding=10>';
