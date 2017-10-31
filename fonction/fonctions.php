@@ -182,7 +182,6 @@ function historique($IDjou,$IDadv)
 $jou = new joueur($IDjou);
 $adv = new joueur($IDadv);
 
-echo "Vous allez jouer contre:" . $adv->get_Pseudo() . "<br>";
 echo "<br>Historique récent de toutes les parties de ce joueur : <br>";
 
 echo "<table border=1 cellspacing=0 cellpadding=5>";

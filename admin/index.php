@@ -1,7 +1,6 @@
 <?php
 
-include_once '../html/entete.php';
-	
+include_once '../html/entete.php';	
 ?>
 
 <a href="effacertable.php">Remise à zéro des parties</a><br>

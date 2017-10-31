@@ -15,11 +15,30 @@ class partieencours
   
   public static function ajouter($joueur1,$joueur2)
   {
-  	$bdd = Connexion::bdd();
-  	
+  	$bdd = Connexion::bdd();	
   	$id=uniqid();
   	$partie=new partieencours($id);
   	$Date = date("Y-m-d H:i:s");
+  	$sql = "SELECT * FROM `partieencours` WHERE (`Id_joueur1` =".$joueur1." AND `Id_joueur2`="."$joueur2".") OR (`Id_joueur1` =".$joueur2." AND `Id_joueur2`="."$joueur1".") ";
+  	$req = $bdd->query($sql);
+  	$reponse = $req->fetch();
+  	if($reponse != FALSE)
+  	{
+  		$prec = new partieencours($reponse['Id']);
+  		if($prec->get_coup(1)==NULL)
+  		{
+  			$prec->set_coup(1,rand(0,1));
+  			$prec->set_auto(1,TRUE);
+  		}
+  		if($prec->get_coup(2)==NULL)
+  		{
+  			$prec->set_coup(2,rand(0,1));
+  			$prec->set_auto(2,TRUE);
+  		}
+  		$prec->stock();
+  		$prec->suppr();
+  	}
+ 	
   	
   	$req = $bdd->prepare('INSERT INTO `partieencours` (`Id`, `Id_joueur1`, `Id_joueur2`, `date`)
 VALUES(:Id, :joueur1, :joueur2, :date)');

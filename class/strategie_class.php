@@ -76,7 +76,7 @@ $donnee = $rep->fetch();
   public function get_desc()
   {
   	$bdd = Connexion::bdd();
-  	$sql = 'SELECT * FROM listestrategies WHERE id_joueur='.$this->_id.' ';
+  	$sql = 'SELECT * FROM listestrategies WHERE id='.$this->_id.' ';
   	$rep = $bdd->query($sql);
   	$donnee = $rep->fetch();
   	return $donnee["Description"];

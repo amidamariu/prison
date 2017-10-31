@@ -27,9 +27,15 @@ if (! joueur::connected ()) {
     	$coupstrat = $strat->jouer($jou->get_id());
     	$partie->set_coup(2, $coupstrat);
     	
-    	echo '<table border=1 cellspacing=0 cellpadding=5><td>'.$strat->get_desc().'</td></table>';
     	
     }
+    echo "Vous allez jouer contre:" . $adv->get_Pseudo() . "<br>";
+    
+    if($adv->is_strat())
+    {
+    echo '<table border=1 cellspacing=0 cellpadding=5><td>'.$strat->get_desc().'</td></table>';
+    }
+    
     echo "<br> Statistiques générales de ce joueur : <br>";
     historique($jou->get_id(),$adv->get_id());
 		
