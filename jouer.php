@@ -46,13 +46,6 @@ xhr.addEventListener('readystatechange', function() {
             var createur = xhr.responseXML.getElementsByTagName('createur');
             createur = createur[0].childNodes[0].nodeValue;
 
-    		if(createur==='oui')
-    		{
-    		//	var xhr2 = new XMLHttpRequest();
-    		//	xhr2.open('GET', 'traitementpartie.php?num='+partie,true);
-    		//	xhr2.send(null);
-    		}
-
     		if(type ==='J')
     		{
             div.innerHTML = 'adversaire trouvé ! <br> Vous allez affronter '+adv+'! <br> <br> Redirection vers la partie dans 5 secondes';
@@ -93,9 +86,6 @@ else
 ?>
 
 <script>
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'traitementpartie.php?num=<?php echo $partie->get_id(); ?>',true);
-xhr.send(null);
 var cmd = "window.location='jouerjoueur.php?num=<?php echo $partie->get_id(); ?>'";
 setTimeout(cmd,1000);
 </script>
