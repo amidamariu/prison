@@ -285,7 +285,7 @@ function get_historique($id)
         if(file_exists($fichier)) {
         $config = parse_ini_file($fichier, true);
      
-        $limite = $config['affichage']['limite'];
+        $limite = get_data_from_ini_file('affichage','limite');
     
         }
 		
@@ -318,13 +318,7 @@ print_r($result);
 
 function get_historique2($id,$id2)
 {
-
-
-        $fichier = 'config/conf.ini';
-        if(file_exists($fichier)) {
-        $config = parse_ini_file($fichier, true);
-     
-        $limite = $config['affichage']['limite'];
+        $limite = get_data_from_ini_file('affichage','limite');
     
         }
 
