@@ -81,7 +81,7 @@ else
 {
 	$strat = new strategie();
 	$partie = partieencours::ajouter($jou->get_id(),$strat->get_id_joueur());
-
+	$partie->set_old();
 
 ?>
 

@@ -281,14 +281,11 @@ function get_data_from_ini_file($type,$var)
 function get_historique($id)
 {
 
-        $fichier = 'config/conf.ini';
-        if(file_exists($fichier)) {
-        $config = parse_ini_file($fichier, true);
+
      
         $limite = get_data_from_ini_file('affichage','limite');
     
-        }
-		
+
 $bdd = Connexion::bdd();
 
 $req = $bdd->query('SELECT * FROM listeparties WHERE Joueur1 ='.$id.' OR Joueur2 ='.$id.' ORDER BY date DESC LIMIT '.$limite);
@@ -300,27 +297,14 @@ else
 {
 	return null;
 }
-// $donnees= $req->fetchAll();
 
-/*
-while ($result = $req->fetch()) 
-{
-	
-	echo "<pre>";
-print_r($result);
- echo "</pre>";
- 
- echo $result["Joueur1"];
-
-}
-*/
 }
 
 function get_historique2($id,$id2)
 {
         $limite = get_data_from_ini_file('affichage','limite');
     
-        }
+        
 
 
 $bdd = Connexion::bdd();

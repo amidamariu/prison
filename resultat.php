@@ -54,16 +54,8 @@ else
 echo "La partie n'existe plus'";
 }
 }
+
 include_once 'html/end.php';
 
-/*
-<script>
-
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'supprpartie.php');
-xhr.send(null);
-
-</script>
-*/
 ?>
 

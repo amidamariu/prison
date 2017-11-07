@@ -68,18 +68,11 @@ public function get_id()
 }
 
 
-public function set_ok($num)
+public function set_old()
 {
 	
 	$bdd = Connexion::bdd();
-	
-	if($num === 1)
-	{
-	$sql = "UPDATE partieencours SET OK1=1 WHERE Id='".$this->_id." '";
-	}
-	else
-	{
-	$sql = "UPDATE partieencours SET OK2=1 WHERE Id='".$this->_id." '";}
+	$sql = "UPDATE partieencours SET NEW = 0 WHERE Id='".$this->_id." '";
 	$rep = $bdd->query($sql);
 
 }
@@ -164,26 +157,6 @@ VALUES(:joueur1, :joueur2, :coup1, :coup2)');
 	
 }
 
-public function set_okdel()
-{
-	
-	$bdd = Connexion::bdd();
-
-	$sql = "UPDATE partieencours SET Okdel=TRUE WHERE Id='".$this->_id." '";	
-	$rep = $bdd->query($sql);	
-	
-}
-
-public function get_okdel()
-{
-	
-	$bdd = Connexion::bdd();
-	$sql = "SELECT * FROM partieencours  WHERE Id='".$this->_id."'" ;
-	$rep = $bdd->query($sql);
-	$donnee = $rep->fetch();
-
-		return $donnee["OKdel"];
-}
 
 public function suppr()
 {
@@ -216,20 +189,13 @@ public function exist()
 
 
 
-public function get_ok($num)
+public function is_new()
 {
 	$bdd = Connexion::bdd();
 	$sql = "SELECT * FROM partieencours  WHERE Id='".$this->_id."'" ;
 	$rep = $bdd->query($sql);
 	$donnee = $rep->fetch();
-	if($num===1)
-	{
-	return $donnee["OK1"];
-	}
-	else
-	{
-	return $donnee["OK2"];
-	}
+	$donnee["NEW"];
 }
 
 public function get_joueur($num)
@@ -302,7 +268,7 @@ public static function find_last($joueur2)
 public static function find_new($joueur2)
 {
 	$bdd = Connexion::bdd();
-	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' AND OK1=0 AND OK2 ORDER BY date DESC';
+	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' AND NEW=TRUE ORDER BY date DESC';
 	$rep = $bdd->query($sql);
 	$donnee = $rep->fetch();
 	if($donnee==null)

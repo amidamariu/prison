@@ -10,9 +10,9 @@ $adv = $jou->find_adv();
 $latence = get_data_from_ini_file('Latence','Verif');
 $DureeMax = get_data_from_ini_file('Latence','DureeAvantStrat');
 
-if($adv == 0)
+if($adv == 0) //si on n'a pas trouvé d'adverssaire
 {
-    $jou->set_attente();
+    $jou->set_attente(); 
 	$t1=time();
 	$t2=time();
 	$trouve=false;
@@ -23,7 +23,7 @@ if($adv == 0)
 	$partie = partieencours::find_new($jou->get_id());
 	if( $partie != null)
 	{
-	$partie->set_ok(2);
+	$partie->set_old();
 	$trouve=true;
 	xmladv(Joueur::Pseudo_by_id($partie->get_joueur(1)),$partie->get_id(),FALSE,'J');
 	break;
@@ -34,15 +34,15 @@ if($adv == 0)
 		$strat = new strategie();
 		$partie = partieencours::ajouter($jou->get_id(),$strat->get_id_joueur());
 		$jou->unset_attente();
+		$partie->set_old();
 		xmladv($strat->get_nom(),$partie->get_id(),TRUE,'S');  
 	}
 }
-else
+else //si on a on extrait un adversaire de la liste d'attente
 {
     
     
 	$partie = partieencours::ajouter($jou->get_id(),$adv);
-	$partie->set_ok(1);
 
 	$t1=time();
 	$t2=time();
@@ -51,7 +51,7 @@ else
 	{
 		sleep($latence);
 		$t2=time();
-		if($partie->get_ok(2)==1)
+		if(!$partie->is_new())
 		{
 		    xmladv(Joueur::Pseudo_by_id($partie->get_joueur(2)),$partie->get_id(),TRUE,'J');
 			break;
