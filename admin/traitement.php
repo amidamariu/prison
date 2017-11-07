@@ -18,7 +18,7 @@ function recupereparties($duree)
 }
 
 $tab = recupereparties(60);
-
+get_data_from_ini_file('Latence','Live')
 
 foreach ( $tab  as $result)
 {

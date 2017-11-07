@@ -1,7 +1,5 @@
 <?php
 
-
-
 class partieencours
 {
   private $_id;

@@ -1,12 +1,14 @@
 <?php
+chdir ('..');
+// include_once '../html/entete.php';
+include_once 'class/connexion_class.php';
+include_once 'class/joueur_class.php';
 
-include_once '../html/entete.php';
-include_once '../class/connexion_class.php';
-include_once '../class/joueur_class.php';
+
 
 function recupereparties($duree)
 {
-	chdir ('..');
+
 	//$chemin = getcwd();
 	//echo $chemin;
 
