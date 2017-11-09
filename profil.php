@@ -1,7 +1,7 @@
 <?php
-
-include_once 'html/entete.php';
-include_once "menu.php";
+include_once 'path.php';
+include_once ROOT.'html/entete.php';
+include_once ROOT."menu.php";
 if(!joueur::connected())
 {
 	?>

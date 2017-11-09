@@ -1,7 +1,8 @@
 <?php
 ob_start();
-include_once 'html/entete.php';
-include_once 'class/joueur_class.php';
+include_once 'path.php';
+include_once ROOT.'html/entete.php';
+include_once ROOT.'class/joueur_class.php';
 session_start();
 //include_once "menu.php";
 

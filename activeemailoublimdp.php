@@ -1,8 +1,8 @@
 <?php
-
-include_once 'fonction/fonctions.php';
-include_once 'html/entete.php';
-include_once "menu.php";
+include_once 'path.php';
+include_once ROOT.'fonction/fonctions.php';
+include_once ROOT.'html/entete.php';
+include_once ROOT."menu.php";
 
 if (isset($_GET['code'])) //Est-ce qu'il y a effectivement un code passé en parametre GET dans l'appel de la page ?
 {

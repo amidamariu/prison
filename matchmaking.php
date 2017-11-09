@@ -1,9 +1,10 @@
 <?php
 session_start();
-include_once "class/joueur_class.php";
-include_once "class/partieencours_class.php";
-include_once "class/strategie_class.php";
-include_once "fonction/fonctions.php";
+include_once 'path.php';
+include_once ROOT."class/joueur_class.php";
+include_once ROOT."class/partieencours_class.php";
+include_once ROOT."class/strategie_class.php";
+include_once ROOT."fonction/fonctions.php";
 $jou=joueur::joueur_by_session();
 $adv = $jou->find_adv(); 
 

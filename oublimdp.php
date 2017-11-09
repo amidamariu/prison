@@ -1,7 +1,7 @@
 <?php
-
-include_once 'fonction/fonctions.php';
-include_once 'menu.php';
+include_once 'path.php';
+include_once ROOT.'fonction/fonctions.php';
+include_once ROOT.'menu.php';
 ?>
 <div>
 Mot de passe oublié : deux étapes.<br>

@@ -1,7 +1,8 @@
 <?php //Page php fortement inspirée de http://www.supportduweb.com/scripts_tutoriaux-code-source-84-espace-membre-en-php-mysql-utilisateurs-espace-membre-inscription-connection-sessions-php-mysql.html
-include_once 'fonction/fonctions.php';
-include_once 'html/entete.php';
-include_once "menu.php";
+include_once 'path.php';
+include_once ROOT.'fonction/fonctions.php';
+include_once ROOT.'html/entete.php';
+include_once ROOT."menu.php";
 ?>
 Inscription au jeu du dilemme du prisonnier<br>
 

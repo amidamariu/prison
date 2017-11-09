@@ -4,7 +4,7 @@ class Connexion {
      
     public static function bdd() {
         // fichier contenant les informations pour se connecter
-        $fichier = 'config/sql.ini';
+        $fichier = ROOT.'config/sql.ini';
         if(file_exists($fichier)) {
         $config = parse_ini_file($fichier, true);
      

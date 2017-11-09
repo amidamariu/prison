@@ -5,7 +5,6 @@ include_once "../class/connexion_class.php";
 function RemiseAzero()
 {
 
-chdir ('..');
 //$chemin = getcwd();
 //echo $chemin;
 $bdd = Connexion::bdd();
@@ -34,8 +33,6 @@ $req -> closeCursor();
 
 function RemiseAzeropartiesencours()
 {
-
-chdir ('..');
 //$chemin = getcwd();
 //echo $chemin;
 $bdd = Connexion::bdd();

@@ -1,9 +1,10 @@
 <?php
-include_once 'fonction/fonctions.php';
-include_once "class/strategie_class.php";
-include_once "class/partieencours_class.php";
-include_once 'html/entete.php';
-include_once "menu.php";
+include_once 'path.php';
+include_once ROOT.'fonction/fonctions.php';
+include_once ROOT."class/strategie_class.php";
+include_once ROOT."class/partieencours_class.php";
+include_once ROOT.'html/entete.php';
+include_once ROOT."menu.php";
 
 if (! joueur::connected ()) {
 	echo "vous devez être connecté pour accéder à cette page";

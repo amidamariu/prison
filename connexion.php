@@ -1,8 +1,9 @@
 <?php
+include_once 'path.php';
 ob_start ();
-include_once 'fonction/fonctions.php';
-include_once 'html/entete.php';
-include_once "menu.php";
+include_once ROOT.'fonction/fonctions.php';
+include_once ROOT.'html/entete.php';
+include_once ROOT."menu.php";
 // Si lutilisateur est connecte, on le deconecte
 if (joueur::connected ()) {
 	echo "vous êtes déja connecté";

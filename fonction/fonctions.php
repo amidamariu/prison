@@ -1,7 +1,7 @@
 <?php
-
-include_once "class/connexion_class.php";
-include_once "class/joueur_class.php";
+include_once 'path.php';
+include_once ROOT.'class/joueur_class.php';
+include_once ROOT.'class/connexion_class.php';
 //Stocke mdpchange hasché à la place l'ancien dans la base sur la ligne de l'email
 
 
@@ -270,7 +270,7 @@ $adv->get_stat();
 
 function get_data_from_ini_file($type,$var)
 {
-	$fichier = 'config/conf.ini';
+	$fichier = ROOT.'config/conf.ini';
 	if(file_exists($fichier)) {
 	$config = parse_ini_file($fichier, true);
 		

@@ -50,7 +50,7 @@ VALUES(:Id, :joueur1, :joueur2, :date)');
 	
 $ch = curl_init();
  
-curl_setopt($ch, CURLOPT_URL, 'http://127.0.0.1/prison/traitementpartie.php?num='.$id);
+curl_setopt($ch, CURLOPT_URL, 'http://'.ROOTWEB.'traitementpartie.php?num='.$id);
 curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1000);
  
 curl_exec($ch);
@@ -58,7 +58,6 @@ curl_close($ch);
   	
   	return $partie;
   }
-
 
 public function get_id() 
 {

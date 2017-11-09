@@ -1,8 +1,9 @@
 <?php
 chdir ('..');
-
-include_once 'class/connexion_class.php';
-include_once 'class/joueur_class.php';
+include_once 'path.php';
+include_once ROOT.'class/connexion_class.php';
+include_once ROOT.'class/joueur_class.php';
+include_once ROOT.'fonction/fonctions.php';
 
 function recupereparties($duree)
 {
@@ -17,9 +18,9 @@ function recupereparties($duree)
 	return $donnees;
 }
 
-$tab = recupereparties(60);
-get_data_from_ini_file('Latence','Live')
 
+$lat = get_data_from_ini_file('Latence','Live');
+$tab = recupereparties($lat);
 foreach ( $tab  as $result)
 {
 	echo "<tr>";

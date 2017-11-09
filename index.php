@@ -1,14 +1,17 @@
 <?php
+include_once 'path.php';
+include_once ROOT.'html/entete.php';
+require_once ROOT.'menu.php';
 
-include_once 'html/entete.php';
-require_once 'menu.php';
+
 if(!joueur::connected())
 {
 
 }
 else
 {
-	
+
+
 ?>
 
 
