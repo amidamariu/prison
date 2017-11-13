@@ -19,7 +19,7 @@ else
 echo ' <a href="modifmdp.php">Modifier mot de passe</a><br>';
 	}
 echo '<a href="modifpseudo.php">Modifier pseudo</a><br>';
-echo "vos statisiques<br>";
+echo "vos statistiques<br>";
 $jou = joueur::joueur_by_session();
 $jou->get_stat();
 }
