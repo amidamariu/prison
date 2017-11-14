@@ -125,11 +125,22 @@ else
   }
   
   
-  public static function session_for_eprel($login)
+  public static function liste_joueur()
   {
 
+  	$bdd = Connexion::bdd();
+  	$req = $bdd->query('SELECT * FROM `listejoueurs` WHERE 1 ORDER BY `Pseudo` ');
+  	return $req->fetchall();
+  	
+  	
+  }
+  
+  
+  public static function session_for_eprel($login)
+  {
+  	
   	$jou = joueur::joueur_by_eprelID($login);
-
+  	
   	if( $jou != null)
   	{
   		return $jou->Get_Sessionid();
@@ -141,8 +152,7 @@ else
   		return $jou->Get_Sessionid();
   	}
   }
-  
-  
+
   
   public function ChangeMdp($mdpchange)
   {

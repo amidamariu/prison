@@ -456,6 +456,7 @@ function recupereclassement($inf,$sup)
 	return $donnees;
 }
 
+
 function ecrireclassement($inf,$sup)
 {
 	$tableau = recupereclassement($inf,$sup);
@@ -463,10 +464,23 @@ function ecrireclassement($inf,$sup)
 	if ($tableau)
 	{
 		echo '<table>';
-		echo '<tr><td>Place</td><td>Nom</td><td>Score moyen</td><td>Parties jouées</td></tr>';
+		echo '<tr><td>Place</td><td>Nom</td><td>Score moyen</td></tr>';
+		$scoremoyenprecedent=-1;
+		$Nbpartiesprecedentes=0;
+		$placeprecedente=0;
 		for ($i = 0; $i < count($tableau); $i++)
 		{
-			echo '<tr><td>'.strval($i+1).'</td><td>'.$tableau[$i]['Pseudo'].'</td><td align="center" >'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+			if (($tableau[$i]['score_moyen']==$scoremoyenprecedent) and ($tableau[$i]['Nbpartiesjouees']==$Nbpartiesprecedentes))
+			{
+				echo '<tr><td>'.$placeprecedente.'</td><td>'.$tableau[$i]['Pseudo'].'</td><td>'.$tableau[$i]['score_moyen'].'</td><td>'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+			}
+			else
+			{
+				echo '<tr><td>'.strval($i+1).'</td><td>'.$tableau[$i]['Pseudo'].'</td><td>'.$tableau[$i]['score_moyen'].'</td><td>'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				$placeprecedente=strval($i+1);
+				$scoremoyenprecedent=$tableau[$i]['score_moyen'];
+				$Nbpartiesprecedentes=$tableau[$i]['Nbpartiesjouees'];
+			}
 		}
 		echo '<table>';
 	}
@@ -475,7 +489,6 @@ function ecrireclassement($inf,$sup)
 		echo 'Aucun joueur classé dans cette catégorie';
 	}
 }
-
 
 
 
