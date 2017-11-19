@@ -1,5 +1,6 @@
 <?php
 chdir("..");
+include_once "path.php";
 include_once "class/joueur_class.php";
 include_once "class/connexion_class.php";
 
