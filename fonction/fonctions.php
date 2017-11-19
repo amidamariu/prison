@@ -268,6 +268,62 @@ $adv->get_stat();
 }
 
 
+
+function historique_muse($IDjou,$IDadv,$type)
+{
+	$jou = new joueur($IDjou);
+	$adv = new joueur($IDadv);
+	
+	
+	
+	echo "<table width=100%>";
+	
+if($type==1)
+{
+$hist = get_historique( $IDadv);
+}
+else
+{
+	$hist = get_historique2 ( $IDadv, $IDjou);
+}
+	
+	if($hist == NULL)
+	{
+		echo "Ce joueur n'a encore jamais joué";
+		echo "<br>";
+	}
+	else
+	{
+
+		foreach ( $hist as $result ) {
+			echo "<tr>";
+			if($result["Coup1"]==1)
+			{
+				echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur1"]) . "</td>";
+			}
+			if($result["Coup1"]==0)
+			{
+				echo '<td style="color:red" >' . Joueur::Pseudo_by_id($result ["Joueur1"]). "</td>";
+			}
+			if($result["Coup2"]==1)
+			{
+				echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</td>";
+			}
+			if($result["Coup2"]==0)
+			{
+				echo '<td style="color:red" >' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</td>";
+			}
+			
+			echo "</tr>";
+		}
+		echo "</table>";
+	}
+	
+
+}
+
+
+
 function get_data_from_ini_file($type,$var)
 {
 	$fichier = ROOT.'config/conf.ini';

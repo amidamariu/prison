@@ -1,0 +1,333 @@
+<manifest alg="2" build="2018.0.0.379" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="dilemmeduprisonnier.fr" resolutions="1x" timestamp="1510939848006">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="master_menu.css" crc="4086283001" ref="pg_regles:pg_cooptrahi:pg_resultat:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco"/>
+    <file name="nomq_preview_master_menu.css" crc="306763763" ref="pg_regles:pg_cooptrahi:pg_resultat:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco"/>
+    <file name="master_fond-fonce.css" crc="4117649066" ref="index:licence-et-crédits"/>
+    <file name="nomq_preview_master_fond-fonce.css" crc="3824530138" ref="index:licence-et-crédits"/>
+    <file name="master_fond-clair-vide.css" crc="455394467" ref="pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_connexion_error:pg_inscription:pg_connexion_ok"/>
+    <file name="nomq_preview_master_fond-clair-vide.css" crc="3824530138" ref="pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_connexion_error:pg_inscription:pg_connexion_ok"/>
+    <file name="pg_regles.css" crc="375060721" ref="pg_regles"/>
+    <file name="nomq_pg_regles.css" crc="4098262835" ref="pg_regles"/>
+    <file name="pg_cooptrahi.css" crc="4243299258" ref="pg_cooptrahi"/>
+    <file name="nomq_pg_cooptrahi.css" crc="476137871" ref="pg_cooptrahi"/>
+    <file name="pg_inscription_conf.css" crc="3953062611" ref="pg_inscription_conf"/>
+    <file name="nomq_pg_inscription_conf.css" crc="57433073" ref="pg_inscription_conf"/>
+    <file name="pg_resultat.css" crc="3949136744" ref="pg_resultat"/>
+    <file name="nomq_pg_resultat.css" crc="76602490" ref="pg_resultat"/>
+    <file name="pg_recup_mdp.css" crc="112940942" ref="pg_recup_mdp"/>
+    <file name="nomq_pg_recup_mdp.css" crc="68087548" ref="pg_recup_mdp"/>
+    <file name="pg_jouer_joueurstrategie.css" crc="263254079" ref="pg_jouer_joueurstrategie"/>
+    <file name="nomq_pg_jouer_joueurstrategie.css" crc="3817547226" ref="pg_jouer_joueurstrategie"/>
+    <file name="pg_mdp_env.css" crc="3985081312" ref="pg_mdp_env"/>
+    <file name="nomq_pg_mdp_env.css" crc="53824922" ref="pg_mdp_env"/>
+    <file name="pg_classement.css" crc="103451250" ref="pg_classement"/>
+    <file name="nomq_pg_classement.css" crc="3946644019" ref="pg_classement"/>
+    <file name="index.css" crc="3896260393" ref="index"/>
+    <file name="nomq_index.css" crc="109467533" ref="index"/>
+    <file name="pg_profil.css" crc="78965272" ref="pg_profil"/>
+    <file name="nomq_pg_profil.css" crc="4166047818" ref="pg_profil"/>
+    <file name="pg_connexion_error.css" crc="16039533" ref="pg_connexion_error"/>
+    <file name="nomq_pg_connexion_error.css" crc="186740828" ref="pg_connexion_error"/>
+    <file name="licence-et-cr_dits.css" crc="4240982838" ref="licence-et-crédits"/>
+    <file name="nomq_licence-et-cr_dits.css" crc="4257639486" ref="licence-et-crédits"/>
+    <file name="pg_deco.css" crc="4278402666" ref="pg_deco"/>
+    <file name="nomq_pg_deco.css" crc="3963591702" ref="pg_deco"/>
+    <file name="pg_inscription.css" crc="4077993194" ref="pg_inscription"/>
+    <file name="nomq_pg_inscription.css" crc="229846594" ref="pg_inscription"/>
+    <file name="pg_connexion_ok.css" crc="168349236" ref="pg_connexion_ok"/>
+    <file name="nomq_pg_connexion_ok.css" crc="4056317937" ref="pg_connexion_ok"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="museutils.js" crc="3803043152" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="whatinput.js" crc="86476730" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="museconfig.js" crc="380897831" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="jquery.museresponsive.js" crc="3955820958" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="require.js" crc="4157109226" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="jquery.watch.js" crc="99325471" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+  </folder>
+  <folder name="images">
+    <file name="fond_connexion.jpg" crc="3941323771" ref="index:licence-et-crédits">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+    </file>
+    <file name="titre-gd.png" crc="536782488" seo="true" ref="index:licence-et-crédits">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+    </file>
+    <file name="carte-fond.png" crc="3914218562" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="logo-upec-blc-185.png" crc="4136276912" seo="true" ref="index:licence-et-crédits">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+      <caption webpage="licence-et-crédits" alt=""/>
+    </file>
+    <file name="blank.gif" crc="4208392903" ref="index:licence-et-crédits:pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok"/>
+    <file name="fond_inscription.jpg" crc="34134875" ref="pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_connexion_ok">
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+    </file>
+    <file name="titre-pt.png" crc="360484984" seo="true" ref="pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok">
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+    </file>
+    <file name="picto_erreur.png" crc="4051601570" seo="true" ref="pg_connexion_error:pg_connexion_ok">
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+    </file>
+    <file name="upec_cmjn185.png" crc="449675334" seo="true" ref="pg_connexion_error:pg_inscription:pg_inscription_conf:pg_recup_mdp:pg_mdp_env:pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat:pg_connexion_ok">
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_recup_mdp" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_connexion_error" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_inscription" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+    </file>
+    <file name="picto_reussite.png" crc="394858050" seo="true" ref="pg_inscription_conf:pg_mdp_env:pg_connexion_ok">
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_connexion_ok" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_inscription_conf" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+      <caption webpage="pg_mdp_env" alt=""/>
+    </file>
+    <file name="fond_jouer.png" crc="4078905297" ref="pg_jouer_joueurstrategie:pg_cooptrahi:pg_resultat">
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_cooptrahi" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_resultat" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+    </file>
+    <file name="u9574.png" crc="138273033" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9574-r.png" crc="3834161280" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9570.png" crc="109297011" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9570-r.png" crc="315377294" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9570-a.png" crc="103097063" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9576.png" crc="434252653" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9576-r.png" crc="414609562" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9576-a.png" crc="448860413" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9572.png" crc="3990964266" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9572-r.png" crc="311378454" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="u9572-a.png" crc="174751411" ref="pg_jouer_joueurstrategie:pg_classement:pg_profil:pg_deco:pg_cooptrahi:pg_regles:pg_resultat"/>
+    <file name="boutons230x30_joueur.png" crc="148210692" seo="true" ref="pg_jouer_joueurstrategie">
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+    </file>
+    <file name="boutons230x30_strat.png" crc="3973299437" seo="true" ref="pg_jouer_joueurstrategie">
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+    </file>
+    <file name="carte_regles1.png" crc="364550514" seo="true" ref="pg_jouer_joueurstrategie:pg_regles">
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+      <caption webpage="pg_jouer_joueurstrategie" alt=""/>
+    </file>
+    <file name="fond_classement.png" crc="135250984" ref="pg_classement">
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+      <caption webpage="pg_classement" alt=""/>
+    </file>
+    <file name="fond_profil.jpg" crc="73129125" ref="pg_profil">
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+      <caption webpage="pg_profil" alt=""/>
+    </file>
+    <file name="fond_deconnexion.jpg" crc="4004691351" ref="pg_deco">
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+      <caption webpage="pg_deco" alt=""/>
+    </file>
+    <file name="fond_regles.jpg" crc="4275032634" ref="pg_regles">
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+      <caption webpage="pg_regles" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="189684004" seo="true" mt="1510760561169" redirect="true"/>
+  <file name="licence-et-crédits.html" crc="3812345202" seo="true" mt="1510760156783" redirect="true"/>
+  <file name="pg_connexion_error.html" crc="103045054" seo="true" mt="1510916194934" redirect="true"/>
+  <file name="pg_inscription.html" crc="190494449" seo="true" mt="1510762880278" redirect="true"/>
+  <file name="pg_inscription_conf.html" crc="379215480" seo="true" mt="1510763017432" redirect="true"/>
+  <file name="pg_recup_mdp.html" crc="345855369" seo="true" mt="1510762797056" redirect="true"/>
+  <file name="pg_mdp_env.html" crc="291396194" seo="true" mt="1510762779494" redirect="true"/>
+  <file name="pg_jouer_joueurstrategie.html" crc="4155076732" seo="true" mt="1510938866699" redirect="true"/>
+  <file name="pg_classement.html" crc="4078081549" seo="true" mt="1510939686868" redirect="true"/>
+  <file name="pg_profil.html" crc="450101193" seo="true" mt="1510938866699" redirect="true"/>
+  <file name="pg_deco.html" crc="428198179" seo="true" mt="1510938866699" redirect="true"/>
+  <file name="pg_cooptrahi.html" crc="325548639" seo="true" mt="1510938866699" redirect="true"/>
+  <file name="pg_regles.html" crc="4193525911" seo="true" mt="1510938881967" redirect="true"/>
+  <file name="pg_resultat.html" crc="3956038419" seo="true" mt="1510938866699" redirect="true"/>
+  <file name="pg_connexion_ok.html" crc="3894007594" seo="true" mt="1510916284179" redirect="true"/>
+</manifest>

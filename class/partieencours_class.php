@@ -14,6 +14,7 @@ class partieencours
   public static function ajouter($joueur1,$joueur2)
   {
   	$bdd = Connexion::bdd();	
+  
   	$id=uniqid();
   	$partie=new partieencours($id);
   	$Date = date("Y-m-d H:i:s");

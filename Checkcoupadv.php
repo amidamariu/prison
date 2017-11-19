@@ -1,6 +1,5 @@
 <?php
 include_once 'path.php';
-session_start();
 include_once ROOT."class/joueur_class.php";
 include_once ROOT."class/partieencours_class.php";
 

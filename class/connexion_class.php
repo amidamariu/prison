@@ -13,7 +13,7 @@ class Connexion {
         $login  = $config['SQL']['login'];
         $mdp    = $config['SQL']['mdp'];
         $base   = $config['SQL']['base'];
-     
+    
         try {
         	$bdd = new PDO($moteur .':host='. $hote .';dbname='. $base, $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_PERSISTENT => true ) );
         } catch (Exception $e) {

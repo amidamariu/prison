@@ -3,7 +3,6 @@
 include_once 'path.php';
 include_once ROOT.'fonction/fonctions.php';
 include_once ROOT."class/joueur_class.php";
-session_start();
 if(!joueur::connected())
 {
 	?>
