@@ -1,104 +1,3 @@
-<?php
-include_once 'path.php';
-include_once ROOT.'fonction/fonctions.php';
-
-if(!joueur::connected())
-{
-echo "vous devez être connecter pour accéder à cette page";
-}
-else
-{
-$jou = joueur::joueur_by_session();
-$date1 = new DateTime($jou->get_last_change());
-$date2 = new DateTime(date("Y-m-d H:i:s"));
-$interval = $date2->diff($date1);
-
-$fichier = 'config/conf.ini';
-
-if(file_exists($fichier)) {
-	$config = parse_ini_file($fichier, true);
-	
-	$limite = $config['pseudo']['limite'];
-}
-
-$message = "";
-if( $interval->format('%a') < $limite)
-{
-	$message = "Uniquement un changement tout les ".$limite." jours <br> Vous pourrez de nouveau le changer dans ".($limite - $interval->format('%a'))." jours";
-}
-else
-{
-
-if (isset($_POST['pseudonyme'], $_POST['motdepasse']) )
-{
-	//On sécurise les données rentrées (il y a peut-être plus à faire que juste strip_tags)
-	$_POST['pseudonyme'] = strip_tags($_POST['pseudonyme']);
-	$_POST['motdepasse'] = strip_tags($_POST['motdepasse']);
-
-	if (verifiepseudo($_POST['pseudonyme']))
-		//il faut que le nouveau pseudonyme corresponde au format correct et n'existe pas déjà
-	{ 
-		if ($jou->verif_mdp($_POST['motdepasse']) || $jou->is_eprel())
-				//vérification que c'est le bon mot de passe
-				//il faut sans doute limiter le nombre de mot de passe incorrects d'affilé pour un même email, 
-				//pour éviter les tentatives de hackage.
-				// Il doit falloir mettre un indicateur dans la base, mais il faut en discuter. 
-				//Peut-être une limite de temps suffit-elle.
-			{
-				$jou->change_pseudo($_POST['pseudonyme']);
-				//changepseudo($_POST['pseudonyme'],$_SESSION['mail']);
-				
-				$message = "Modification réussie : votre nouveau pseudonyme est ".$_POST['pseudonyme']; 
-				
-				$form = false;
-			}
-			else
-			{
-				//Sinon, on dit que le mot de passe n'est pas valide
-				$form = true;
-				$message = 'Le mot de passe n\'est pas correct.';
-				$_POST['motdepasse']='';
-			}
-
-	}
-    else
-	{
-		//Sinon, on dit que le pseudonyme n'est pas valide
-		$form = true;
-		$message = 'Votre nouveau pseudonyme n\'est pas valide ou il existe déjà.';
-		$_POST['pseudonyme']='';
-	}
-}		
-else	
-{
-	$form = true;
-}
-if(TRUE)
-{
-	//On affiche le formulaire
-//Mais avant, on affiche un message sil y a lieu
-
-$message = $message.'<form method="post" action="modifpseudo.php" name="modifpseudo"><br>
-  <br>
-Nouvel Identifiant/Pseudo&nbsp; <input maxlength="32" size="32" name="pseudonyme">
-
-au moins 6 caractères et alphanumériques uniquement.
-<br>
-<br>
-Mot de passe&nbsp; <input maxlength="20" size="20" name="motdepasse" type="password"> 
-<br>
-  <br>
-  <br>
-  <span style="text-decoration: underline;"></span><input name="envoyer" value="Envoyer" type="submit">
-</form>';
-
-}
-}
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html class="nojs html" lang="fr-FR">
  <head>
@@ -132,10 +31,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox" id="page"><!-- column -->
     <div class="clip_frame colelem" id="u1670"><!-- image -->
      <img class="block temp_no_img_src" id="u1670_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
-    <?php echo "<br><br>".$message ; ?>
     </div>
-
-
+    <div class="clip_frame colelem" id="u9158"><!-- image -->
+     <img class="block temp_no_img_src" id="u9158_img" data-orig-src="images/picto_reussite.png?crc=394858050" alt="" data-heightwidthratio="1" data-image-width="95" data-image-height="95" src="images/blank.gif?crc=4208392903"/>
+    </div>
+    <div class="clip_frame colelem" id="u9171"><!-- image -->
+     <img class="block temp_no_img_src" id="u9171_img" data-orig-src="images/picto_erreur.png?crc=4051601570" alt="" data-heightwidthratio="1" data-image-width="95" data-image-height="95" src="images/blank.gif?crc=4208392903"/>
+    </div>
     <div class="clearfix colelem" id="pu1672"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u1672" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u1672_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
      <a class="nonblock nontext clearfix grpelem shared_content" id="u1674-4" href="licence-et-cr%c3%a9dits.html" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u1674-4_content"><!-- content --><p>Licence et crédits</p></a>
@@ -146,9 +48,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.085" data-image-width="400" data-image-height="34" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
-   <?php echo "<br><br>".$message ; ?>
     </div>
-
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9158"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_reussite.png?crc=394858050" alt="" data-heightwidthratio="1" data-image-width="79" data-image-height="79" data-orig-id="u9158_img" src="images/blank.gif?crc=4208392903"/>
+    </div>
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9171"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_erreur.png?crc=4051601570" alt="" data-heightwidthratio="1" data-image-width="79" data-image-height="79" data-orig-id="u9171_img" src="images/blank.gif?crc=4208392903"/>
+    </div>
     <div class="clearfix colelem temp_no_id" data-orig-id="pu1672"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42207792207792205" data-image-width="154" data-image-height="65" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
      <span class="nonblock nontext clearfix grpelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>
@@ -159,9 +65,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08311688311688312" data-image-width="385" data-image-height="32" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
-<?php echo "<br><br>".$message ; ?>
     </div>
-
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9158"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_reussite.png?crc=394858050" alt="" data-heightwidthratio="1" data-image-width="87" data-image-height="87" data-orig-id="u9158_img" src="images/blank.gif?crc=4208392903"/>
+    </div>
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9171"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_erreur.png?crc=4051601570" alt="" data-heightwidthratio="1" data-image-width="92" data-image-height="92" data-orig-id="u9171_img" src="images/blank.gif?crc=4208392903"/>
+    </div>
     <a class="nonblock nontext clip_frame colelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.4225352112676056" data-image-width="142" data-image-height="60" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
     <span class="nonblock nontext clearfix colelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>
    </div>
@@ -170,7 +80,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08424908424908426" data-image-width="273" data-image-height="23" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
-    <?php echo "<br><br>".$message ; ?>
+    </div>
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9158"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_reussite.png?crc=394858050" alt="" data-heightwidthratio="1" data-image-width="56" data-image-height="56" data-orig-id="u9158_img" src="images/blank.gif?crc=4208392903"/>
+    </div>
+    <div class="clip_frame colelem temp_no_id" data-orig-id="u9171"><!-- image -->
+     <img class="block temp_no_id temp_no_img_src" data-orig-src="images/picto_erreur.png?crc=4051601570" alt="" data-heightwidthratio="1" data-image-width="54" data-image-height="54" data-orig-id="u9171_img" src="images/blank.gif?crc=4208392903"/>
     </div>
     <a class="nonblock nontext clip_frame colelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42105263157894735" data-image-width="95" data-image-height="40" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
     <span class="nonblock nontext clearfix colelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>

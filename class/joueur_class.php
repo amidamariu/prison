@@ -12,7 +12,6 @@ class joueur
 
   $bdd = Connexion::bdd();
 
-	
   $sql = 'SELECT * FROM listejoueurs WHERE id='.$id.' ';
 $rep = $bdd->query($sql);
 $donnee = $rep->fetch();

@@ -506,7 +506,7 @@ function recupereclassement($inf,$sup)
 {
 	$bdd = Connexion::bdd();
 	
-	$req = $bdd->query('SELECT Pseudo, score_moyen, Nbpartiesjouees FROM listejoueurs WHERE Nbpartiesjouees >='.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC');
+	$req = $bdd->query('SELECT Pseudo, score_moyen, Nbpartiesjouees FROM listejoueurs WHERE Nbpartiesjouees >='.$inf.' AND Nbpartiesjouees <='.$sup.' ORDER BY score_moyen DESC, Nbpartiesjouees DESC, Pseudo ASC');
 	$donnees = $req->fetchAll();
 	
 	return $donnees;
@@ -519,8 +519,8 @@ function ecrireclassement($inf,$sup)
 	//var_dump($tableau);
 	if ($tableau)
 	{
-		echo '<table>';
-		echo '<tr><td>Place</td><td>Nom</td><td>Score moyen</td></tr>';
+		echo '<table border=1>';
+		echo '<tr><td align="center" >Place</td><td align="center" >Nom</td><td align="center" >Score moyen</td><td align="center" >Score moyen</td></tr>';
 		$scoremoyenprecedent=-1;
 		$Nbpartiesprecedentes=0;
 		$placeprecedente=0;
@@ -528,11 +528,11 @@ function ecrireclassement($inf,$sup)
 		{
 			if (($tableau[$i]['score_moyen']==$scoremoyenprecedent) and ($tableau[$i]['Nbpartiesjouees']==$Nbpartiesprecedentes))
 			{
-				echo '<tr><td>'.$placeprecedente.'</td><td>'.$tableau[$i]['Pseudo'].'</td><td>'.$tableau[$i]['score_moyen'].'</td><td>'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				echo '<tr><td align="center" >'.$placeprecedente.'</td><td align="center" >'.$tableau[$i]['Pseudo'].'</td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
 			}
 			else
 			{
-				echo '<tr><td>'.strval($i+1).'</td><td>'.$tableau[$i]['Pseudo'].'</td><td>'.$tableau[$i]['score_moyen'].'</td><td>'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				echo '<tr><td align="center">'.strval($i+1).'</td align="center"><td align="center">'.$tableau[$i]['Pseudo'].'</td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
 				$placeprecedente=strval($i+1);
 				$scoremoyenprecedent=$tableau[$i]['score_moyen'];
 				$Nbpartiesprecedentes=$tableau[$i]['Nbpartiesjouees'];

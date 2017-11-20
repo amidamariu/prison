@@ -109,8 +109,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>Pg_connexion_ok</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
-  <link rel="stylesheet" type="text/css" href="css/master_fond-clair-vide.css?crc=455394467"/>
-  <link rel="stylesheet" type="text/css" href="css/pg_connexion_ok.css?crc=168349236" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_fond-clair-vide.css?crc=333224682"/>
+  <link rel="stylesheet" type="text/css" href="css/pg_connexion_ok.css?crc=4151481478" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_fond-clair-vide.css?crc=3824530138"/>
@@ -123,10 +123,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox" id="page"><!-- column -->
     <div class="clip_frame colelem" id="u1670"><!-- image -->
      <img class="block temp_no_img_src" id="u1670_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
+         <div id=test> Recherche d'un adversaire en cours...</div>
+    
     </div>
-    <div class="clip_frame colelem" id="u9158"><!-- image -->          
-     <div id=test> Recherche d'un adversaire en cours...</div>
-    </div>
+
+
     <div class="clearfix colelem" id="pu1672"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u1672" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u1672_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
      <a class="nonblock nontext clearfix grpelem shared_content" id="u1674-4" href="licence-et-cr%c3%a9dits.html" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u1674-4_content"><!-- content --><p>Licence et crédits</p></a>
@@ -137,10 +138,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.085" data-image-width="400" data-image-height="34" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
-    </div>
-    <div class="clip_frame colelem" id="u9158"><!-- image -->          
-     <div id=test> Recherche d'un adversaire en cours...</div>
-    </div>
+     <br> <br> <div id=test> Recherche d'un adversaire en cours...</div>
     <div class="clearfix colelem temp_no_id" data-orig-id="pu1672"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42207792207792205" data-image-width="154" data-image-height="65" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
      <span class="nonblock nontext clearfix grpelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>
@@ -152,9 +150,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08311688311688312" data-image-width="385" data-image-height="32" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
     </div>
-    <div class="clip_frame colelem" id="u9158"><!-- image -->          
-     <div id=test> Recherche d'un adversaire en cours...</div>
-    </div>
+     <br> <br> <div id=test> Recherche d'un adversaire en cours...</div>
+
     <a class="nonblock nontext clip_frame colelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.4225352112676056" data-image-width="142" data-image-height="60" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
     <span class="nonblock nontext clearfix colelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>
    </div>
@@ -164,9 +161,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08424908424908426" data-image-width="273" data-image-height="23" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
     </div>
-    <div class="clip_frame colelem" id="u9158"><!-- image -->          
-     <div id=test> Recherche d'un adversaire en cours...</div>
-    </div>
+     <br> <br> <div id=test> Recherche d'un adversaire en cours...</div>
+
     <a class="nonblock nontext clip_frame colelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42105263157894735" data-image-width="95" data-image-height="40" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>
     <span class="nonblock nontext clearfix colelem placeholder" data-placeholder-for="u1674-4_content"><!-- placeholder node --></span>
    </div>
@@ -196,10 +192,3 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
   <script src="scripts/require.js?crc=4157109226" type="text/javascript" async data-main="scripts/museconfig.js?crc=380897831" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
    </body>
 </html>
-
-
-
-
-
-
-              

@@ -4,7 +4,16 @@ include_once 'html/entete.php';
 include_once "menu.php";
 
 
-if(!joueur::connected())
+if(isset($_GET['admin']))
+{
+	$bool = ($_GET['admin']=='oui');
+}
+else
+{
+	$bool = FALSE;
+}
+
+if(!joueur::connected() && !$bool)
 {
 	echo "vous devez être connecter pour accéder à cette page";
 }

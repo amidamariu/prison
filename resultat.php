@@ -77,15 +77,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>pg_resultat</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
-  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=4086283001"/>
-  <link rel="stylesheet" type="text/css" href="css/pg_resultat.css?crc=3949136744" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=277313464"/>
+  <link rel="stylesheet" type="text/css" href="css/pg_resultat.css?crc=3778508357" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=306763763"/>
+  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=4039072136"/>
   <link rel="stylesheet" type="text/css" href="css/nomq_pg_resultat.css?crc=76602490" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- JS includes -->
-  <script src="https://use.typekit.net/ik/sg3e6Tpwp0E8wouEvU0rZWr_IrXCqfz9WQIe0RQ7Onjfe7GgfO_jC3IPH2JoF2b3FR4LwQZc5Q4RF26u5QjU5AwuZQIt5QiR528cZcZcjDg8ZR6-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgU_cvXM9.js" type="text/javascript"></script>
+  <script src="https://use.typekit.net/ik/3urKs-tluf_S7EofqGkRF5GUygviF3mgvNqtv0FzERXfe7GgfO_jC3IPH2JoF2b3FR4L5QJtFRIojRyKZQ6UjQMXZQjDjhIkFR6XZcwuZQ9UFRM-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgqtVOXM9.js" type="text/javascript"></script>
   <!-- Other scripts -->
   <script type="text/javascript">
    try {Typekit.load();} catch(e) {}
@@ -99,9 +99,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <img class="block temp_no_img_src" id="u9565_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
     </div>
     <div class="clearfix colelem shared_content" id="ppu9574" data-content-guid="ppu9574_content"><!-- group -->
-     <div class="grpelem" id="u9574"><!-- state-based BG images -->
-      <div class="fluid_height_spacer"></div>
-     </div>
+     <a class="nonblock nontext grpelem" id="u9574" href="index.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext grpelem" id="u9570" href="classement.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext grpelem" id="u9576" href="profil.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext grpelem" id="u9572" href="deconnexion.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
@@ -109,9 +107,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="clearfix colelem shared_content" id="u9729-7" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u9729-7_content"><!-- content -->
      <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
     </div>
-        <div class="clearfix colelem shared_content" id="u10151-14" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u10151-14_content"><!-- content -->
-    
-    <?php 
+    <div class="clearfix colelem shared_content" id="u10151-14" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u10151-14_content"><!-- content -->
+     <?php 
     if($partie->exist())
     {
     	
@@ -119,8 +116,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     
      <p>la partie vous opposait à <?php echo $adv->get_Pseudo();?></p>
      <p>&nbsp;</p>
-     <p>vous avez joué : <?php echo $partie->get_coup($numjou);?></p>
-     <p>votre adversaire a joué : <?php echo $partie->get_coup($numadv);?></p>
+     <p>vous avez joué : <?php if($partie->get_coup($numjou) ==0 ) {echo "trahison";}else { echo "coopération";} ?></p>
+     <p>votre adversaire a joué : <?php if($partie->get_coup($numadv) ==0 ) {echo "trahison";}else { echo "coopération";} ?></p>
      <p>Votre gain : <?php echo getGain ( $partie->get_coup($numjou) , $partie->get_coup($numadv)); ?></p>
      <p>Gain complice: <?php echo getGain ( $partie->get_coup($numadv), $partie->get_coup($numjou)); ?></p>
      <p>&nbsp;</p>
@@ -129,9 +126,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     {
    	echo "la partie n'existe plus";
     }?>
-        </div>
+    </div>
     <div class="Button rounded-corners shadow clearfix colelem shared_content" id="buttonu10154" data-visibility="changed" style="visibility:hidden" data-content-guid="buttonu10154_content"><!-- container box -->
-     <a href="index.php">
+      <a href="index.php">
      <div class="clearfix grpelem" id="u10155-4" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true"><!-- content -->
       <p>Rejouer</p>
      </div>
@@ -144,6 +141,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -169,6 +167,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -196,6 +195,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -218,6 +218,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>

@@ -6,10 +6,12 @@ include_once ROOT.'fonction/fonctions.php';
 
 if(joueur::connected())
 {
-	echo "blabla";
      joueur::disconnect();
 }
 ?>
+ 
+ 
+ 
  
  <!DOCTYPE html>
 <html class="nojs html css_verticalspacer" lang="fr-FR">
@@ -30,15 +32,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>pg_deco</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
-  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=4086283001"/>
-  <link rel="stylesheet" type="text/css" href="css/pg_deco.css?crc=4278402666" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=277313464"/>
+  <link rel="stylesheet" type="text/css" href="css/pg_deco.css?crc=466509490" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=306763763"/>
+  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=4039072136"/>
   <link rel="stylesheet" type="text/css" href="css/nomq_pg_deco.css?crc=3963591702" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- JS includes -->
-  <script src="https://use.typekit.net/ik/Mi6isYpNnaecFAtGyUt-_fX08Y5hYWgW0U_ZsX-Ne53fe7GgfO_jC3IPH2JoF2b3FR4LwQZc5Q4RF26u5QjU5AwuZQIt5QiR528cZcZcjDg8ZR6-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgUOcvXM9.js" type="text/javascript"></script>
+  <script src="https://use.typekit.net/ik/1xPPrffR-xwabstH99SUKUsUfg055yxXMph1uuIf45wfe7GgfO_jC3IPH2JoF2b3FR4L5QJtFRIojRyKZQ6UjQMXZQjDjhIkFR6XZcwuZQ9UFRM-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgqJVOXM9.js" type="text/javascript"></script>
   <!-- Other scripts -->
   <script type="text/javascript">
    try {Typekit.load();} catch(e) {}
@@ -52,9 +54,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <img class="block temp_no_img_src" id="u9565_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
     </div>
     <div class="clearfix colelem shared_content" id="ppu9574" data-content-guid="ppu9574_content"><!-- group -->
-     <div class="grpelem" id="u9574"><!-- state-based BG images -->
-      <div class="fluid_height_spacer"></div>
-     </div>
+     <a class="nonblock nontext grpelem" id="u9574" href="index.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext grpelem" id="u9570" href="classement.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext grpelem" id="u9576" href="profil.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      <a class="nonblock nontext MuseLinkActive grpelem" id="u9572" href="deconnexion.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
@@ -73,6 +73,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -98,6 +99,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -125,6 +127,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -147,6 +150,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -179,8 +183,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
   <!-- RequireJS script -->
   <script src="scripts/require.js?crc=4157109226" type="text/javascript" async data-main="scripts/museconfig.js?crc=380897831" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
    </body>
-</html>
- 
+</html> 
 
  
  
