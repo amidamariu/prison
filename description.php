@@ -80,15 +80,15 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <title>pg_regles</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
-  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=4086283001"/>
-  <link rel="stylesheet" type="text/css" href="css/pg_regles.css?crc=375060721" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/master_menu.css?crc=277313464"/>
+  <link rel="stylesheet" type="text/css" href="css/pg_regles.css?crc=456741125" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=306763763"/>
-  <link rel="stylesheet" type="text/css" href="css/nomq_pg_regles.css?crc=4098262835" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_menu.css?crc=4039072136"/>
+  <link rel="stylesheet" type="text/css" href="css/nomq_pg_regles.css?crc=2157822" id="nomq_pagesheet"/>
   <![endif]-->
   <!-- JS includes -->
-  <script src="https://use.typekit.net/ik/O9d6Mx2Ec9yzFWsYvP3RAKeBx3NdtchXDW8DRC5WgJSfe7GgfO_jC3IPH2JoF2b3FR4LwQZc5Q4RF26u5QjU5AwuZQIt5QiR528cZcZcjDg8ZR6-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgUncvXM9.js" type="text/javascript"></script>
+  <script src="https://use.typekit.net/ik/3fAFsoj2TZNgrCfo1-wW1v2JQpKOMblg5eTGX8mUSSXfe7GgfO_jC3IPH2JoF2b3FR4L5QJtFRIojRyKZQ6UjQMXZQjDjhIkFR6XZcwuZQ9UFRM-PKG0Ze8CZAulZAsuSY4TShN0dc88SKocSKUq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkOYiaikoq-AU8dAu8ZYm3Sc8Ddho0-AmkOcZkJ6TliWF8dkuDdeBKH6qJE6vbMg6gJMJ7fbRC2UMMeMw6MqGIQWmDZZMgqGVOXM9.js" type="text/javascript"></script>
   <!-- Other scripts -->
   <script type="text/javascript">
    try {Typekit.load();} catch(e) {}
@@ -102,16 +102,27 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <img class="block temp_no_img_src" id="u9565_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
     </div>
     <div class="clearfix colelem shared_content" id="ppu9574" data-content-guid="ppu9574_content"><!-- group -->
-     <div class="grpelem" id="u9574"><!-- state-based BG images -->
-      <div class="fluid_height_spacer"></div>
-     </div>
-     <a class="nonblock nontext grpelem" id="u9570" href="pg_classement.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
-     <a class="nonblock nontext grpelem" id="u9576" href="pg_profil.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
-     <a class="nonblock nontext grpelem" id="u9572" href="pg_deco.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+     <a class="nonblock nontext grpelem" id="u9574" href="index.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+     <a class="nonblock nontext grpelem" id="u9570" href="classement.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+     <a class="nonblock nontext grpelem" id="u9576" href="profil.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+     <a class="nonblock nontext grpelem" id="u9572" href="deconnexion.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
     </div>
     <div class="clearfix colelem shared_content" id="u9729-7" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u9729-7_content"><!-- content -->
-     <p id="u9729-5">Vous êtes <a class="nonblock" href="pg_profil.html">nomjoueur </a>parmi 12538 joueur.se.s connecté.e.s</p>
-    </div>
+    <?php 
+    if( joueur::connected()){
+    	
+    	echo '<p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php">'.$jou->get_Pseudo().'</a> parmi '.joueur::get_atifs().' joueur.se.s connecté.e.s';
+    }
+    else 
+    {
+    	echo joueur::get_atifs()." joueur.se.s connecté.e.s, <a href='connexion.php'> me connecter </a>";
+    }
+      
+     
+    echo '</p>';
+    
+    
+    ?>    </div>
     <div class="clearfix colelem" id="pu9902"><!-- group -->
      <div class="clip_frame grpelem" id="u9902"><!-- image -->
       <img class="block temp_no_img_src" id="u9902_img" data-orig-src="images/carte_regles1.png?crc=364550514" alt="" data-heightwidthratio="1.488888888888889" data-image-width="90" data-image-height="134" src="images/blank.gif?crc=4208392903"/>
@@ -166,6 +177,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -196,6 +208,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -228,6 +241,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -255,6 +269,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="preload_images">
     <img class="preload temp_no_img_src" data-orig-src="images/u9574-r.png?crc=3834161280" alt="" src="images/blank.gif?crc=4208392903"/>
+    <img class="preload temp_no_img_src" data-orig-src="images/u9574-a.png?crc=425324323" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-r.png?crc=315377294" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9570-a.png?crc=103097063" alt="" src="images/blank.gif?crc=4208392903"/>
     <img class="preload temp_no_img_src" data-orig-src="images/u9576-r.png?crc=414609562" alt="" src="images/blank.gif?crc=4208392903"/>
@@ -288,6 +303,3 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
   <script src="scripts/require.js?crc=4157109226" type="text/javascript" async data-main="scripts/museconfig.js?crc=380897831" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
    </body>
 </html>
-
-
-

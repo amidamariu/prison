@@ -5,7 +5,10 @@ include_once ROOT.'class/joueur_class.php';
 include_once ROOT.'class/strategie_class.php';
 include_once ROOT.'class/partieencours_class.php';
 
-if($_GET['type']!="strat")
+
+$alea = rand(1,10);
+
+if($_GET['type']!="strat" && $alea != 1)
 {
 ?>
 

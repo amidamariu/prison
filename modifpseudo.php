@@ -22,7 +22,8 @@ if(file_exists($fichier)) {
 }
 
 $message = "";
-if( $interval->format('%a') < $limite)
+//if( $interval->format('%a') < $limite)
+if(FALSE)
 {
 	$message = "Uniquement un changement tout les ".$limite." jours <br> Vous pourrez de nouveau le changer dans ".($limite - $interval->format('%a'))." jours";
 }
@@ -131,7 +132,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <div class="breakpoint active" id="bp_infinity" data-min-width="801"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox" id="page"><!-- column -->
     <div class="clip_frame colelem" id="u1670"><!-- image -->
+    <a href="index.php">
      <img class="block temp_no_img_src" id="u1670_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
+    </a>
     <?php echo "<br><br>".$message ; ?>
     </div>
 
@@ -145,7 +148,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <div class="breakpoint" id="bp_800" data-min-width="481" data-max-width="800"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
+    <a href="index.php" >
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.085" data-image-width="400" data-image-height="34" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
+   </a>
    <?php echo "<br><br>".$message ; ?>
     </div>
 
@@ -158,7 +163,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <div class="breakpoint" id="bp_480" data-min-width="321" data-max-width="480"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
+        <a href="index.php" >
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08311688311688312" data-image-width="385" data-image-height="32" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
+</a>
 <?php echo "<br><br>".$message ; ?>
     </div>
 
@@ -169,7 +176,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <div class="breakpoint" id="bp_320" data-max-width="320"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
     <div class="clip_frame colelem temp_no_id" data-orig-id="u1670"><!-- image -->
+        <a href="index.php" >
      <img class="block temp_no_id temp_no_img_src" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08424908424908426" data-image-width="273" data-image-height="23" data-orig-id="u1670_img" src="images/blank.gif?crc=4208392903"/>
+    </a>
     <?php echo "<br><br>".$message ; ?>
     </div>
     <a class="nonblock nontext clip_frame colelem temp_no_id" href="http://www.u-pec.fr/" data-orig-id="u1672"><!-- image --><img class="block temp_no_id temp_no_img_src" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42105263157894735" data-image-width="95" data-image-height="40" data-orig-id="u1672_img" src="images/blank.gif?crc=4208392903"/></a>

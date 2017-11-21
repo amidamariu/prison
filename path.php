@@ -8,6 +8,10 @@ include_once ROOT."class/joueur_class.php";
 session_start();
 if(joueur::connected())
 {
+	if(isset($_GET['eprellogin']))
+	{
+		$_SESSION ['SessionID'] =  $_GET['eprellogin'];
+	}
 $jou = joueur::joueur_by_session();
 $jou->Set_action();
 }

@@ -53,7 +53,37 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
     </div>
     <div class="clearfix colelem shared_content" id="u10205-22" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u10205-22_content"><!-- content -->
-<?php if( joueur::connected()) {echo '<a href="modifpseudo.php"> Changer de pseudo</a><br>'; $jou->get_stat();}else { echo "vous devez être connecté pour afficher vos statistiques";}?>
+<?php if( joueur::connected()) {echo '<a href="modifpseudo.php"> Changer de pseudo</a><br>'; $jou->get_stat(); 
+
+if($jou->get_position()!=NULL)
+{
+	$cat = $jou->get_categorie();
+	
+	switch ($cat) {
+		case 1:
+			$descri = " (moins de 11 parties)";
+			break;
+		case 2:
+			$descri = " (entre 11 et 100 parties)";
+			break;
+		case 3:
+			$descri = " (entre 101 et 1000 parties)";
+			break;
+		case 4:
+			$descri = " (plus de 1000 parties)";
+			break;
+	}
+	
+	
+	echo "Vous êtes dans la catégorie ".$cat.$descri." vous êtes en position ".$jou->get_position();
+}
+else
+{
+	echo "Vous n'avez encore jamais joué";
+}
+
+
+}else { echo "vous devez être connecté pour afficher vos statistiques";}?>
     </div>
     <div class="clearfix colelem" id="pu9568"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u9568" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u9568_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>

@@ -177,10 +177,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <img class="block temp_no_img_src" id="u11238_img" data-orig-src="images/titre-pt.png?crc=360484984" alt="" data-heightwidthratio="0.08333333333333333" data-image-width="480" data-image-height="40" src="images/blank.gif?crc=4208392903"/>
      </div>
      <div class="clearfix colelem shared_content" id="ppu11240" data-content-guid="ppu11240_content"><!-- group -->
-      <a class="nonblock nontext grpelem" id="u11240" href="pg_jouer_joueu_strategie.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
-      <a class="nonblock nontext grpelem" id="u11236" href="pg_classement.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
-      <a class="nonblock nontext grpelem" id="u11247" href="pg_profil.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
-      <a class="nonblock nontext grpelem" id="u11243" href="pg_deco.html"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+      <a class="nonblock nontext grpelem" id="u11240" href="index.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+      <a class="nonblock nontext grpelem" id="u11236" href="classement.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+      <a class="nonblock nontext grpelem" id="u11247" href="profil.phpl"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
+      <a class="nonblock nontext grpelem" id="u11243" href="deconnexion.php"><!-- state-based BG images --><div class="fluid_height_spacer"></div></a>
      </div>
      <div class="clearfix colelem shared_content" id="u11234-7" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u11234-7_content"><!-- content -->
 <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
