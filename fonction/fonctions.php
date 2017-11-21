@@ -520,7 +520,7 @@ function ecrireclassement($inf,$sup)
 	if ($tableau)
 	{
 		echo '<table border=1>';
-		echo '<tr><td align="center" >Place</td><td align="center" >Nom</td><td align="center" >Score moyen</td><td align="center" >Score moyen</td></tr>';
+		echo '<tr><td align="center" >Place</td><td align="center" >Nom</td><td align="center" >Score moyen</td><td align="center" >Parties jouées</td></tr>';
 		$scoremoyenprecedent=-1;
 		$Nbpartiesprecedentes=0;
 		$placeprecedente=0;
