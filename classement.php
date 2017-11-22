@@ -291,9 +291,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <div class="clearfix colelem shared_content" id="u11234-7" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u11234-7_content"><!-- content -->
 <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
      </div>
-          <?php ecrireclassement($_GET['inf'],$_GET['sup']); ?>
+              <?php ecrireclassement($_GET['inf'],$_GET['sup']); ?>
     </div>
-    
     <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="224" data-content-below-spacer="142" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
     <a class="nonblock nontext clip_frame grpelem" id="u11352" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u11352_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
     <a class="nonblock nontext clearfix grpelem shared_content" id="u11351-4" href="licence-et-cr%c3%a9dits.html" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u11351-4_content"><!-- content --><p>Licence et crédits</p></a>

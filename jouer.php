@@ -16,8 +16,14 @@ if($_GET['type']!="strat" && $alea != 1)
 <script>
 
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'matchmaking.php');
-xhr.send(null);
+
+
+
+setTimeout(function(){
+	xhr.open('GET', 'matchmaking.php');
+	xhr.send(null);
+},5000);
+
 
 
 
