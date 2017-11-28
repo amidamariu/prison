@@ -289,8 +289,10 @@ else
 	
 	if($hist == NULL)
 	{
-		echo "Ce joueur n'a encore jamais joué";
-		echo "<br>";
+		echo "<tr> Ce joueur n'a encore jamais joué </tr>";
+
+		
+		echo "</table>";
 	}
 	else
 	{
@@ -542,6 +544,9 @@ function ecrireclassement($inf,$sup)
 	}
 	else
 	{
+		echo '<table border=1>';
+		echo '<tr><td align="center" >Place</td><td align="center" >Nom</td><td align="center" >Score moyen</td><td align="center" >Parties jouées</td></tr>';
+		echo '<table>';
 		echo 'Aucun joueur classé dans cette catégorie';
 	}
 }

@@ -157,12 +157,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <td class="tg-ockh">Défection</td>
   </tr>
   <tr>
-    <td class="tg-5ahe">Coopération adverse</td>
+    <td class="tg-5ahe">Coopération du complice</td>
     <td class="tg-5ahe">3 points</td>
     <td class="tg-5ahe">5 points</td>
   </tr>
   <tr>
-    <td class="tg-ockh">Défection adverse</td>
+    <td class="tg-ockh">Défection du complice</td>
     <td class="tg-ockh">0 point</td>
     <td class="tg-ockh">1 point</td>
   </tr>

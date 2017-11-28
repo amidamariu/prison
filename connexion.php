@@ -69,7 +69,7 @@ if (joueur::connected ()) {
 				value="<?php echo htmlentities($ousername, ENT_QUOTES, 'UTF-8'); ?>" /><br />
 			<label for="password">Mot de passe</label><input type="password"
 				name="password" id="password" /><br /> <input type="submit"
-				value="Connection" />
+				value="Connexion" />
 		</div>
 	</form>
 </div>

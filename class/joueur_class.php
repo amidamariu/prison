@@ -557,10 +557,10 @@ $donnee = $rep->fetch();
   	echo "Parties jouées: " . $this->get_total () . "<br>";
   	echo "Score moyen: " . number_format($this->get_score_moyen (),4). "<br>";
   	echo "Penalités: " . $this->get_auto()."<br>";
-  	echo "Nombre coopération face à une défection : " . $this->get_nbcoup ( 1, 0 ) . "<br>";
-  	echo "Nombre coopération face à une coopération : " . $this->get_nbcoup ( 1, 1 ) . "<br>";
-  	echo "Nombre défection face à une défection : " . $this->get_nbcoup ( 0, 0 ) . "<br>";
-  	echo "Nombre défection face à une coopération : " . $this->get_nbcoup ( 0, 1 ) . "<br> <br>";
+  	echo "Nombre de coopérations face à une coopération : " . $this->get_nbcoup ( 1, 1 ) . "<br>";
+  	echo "Nombre de coopérations face à une défection : " . $this->get_nbcoup ( 1, 0 ) . "<br>";
+  	echo "Nombre de défections face à une coopération : " . $this->get_nbcoup ( 0, 1 ) . "<br>";
+  	echo "Nombre de défections face à une défection : " . $this->get_nbcoup ( 0, 0 ) . "<br>  <br>";
   }
   
 

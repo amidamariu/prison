@@ -91,7 +91,7 @@ function partiesjouees($tableau,$joueur)
 
 // on récupère le pseudo passé en parametre
 $pseudo = $_GET['pseudo'];
-
+echo $pseudo;
 // on va chercher dans la base l'identifiant correspondant au pseudo
 $bdd = Connexion::bdd();
 $req = $bdd->query('SELECT Id FROM listejoueurs WHERE Pseudo='.$pseudo);

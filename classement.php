@@ -97,7 +97,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </a>
      </div>
      <div class="Button rounded-corners shadow clearfix colelem shared_content" id="buttonu11113" data-visibility="changed" style="visibility:hidden" data-content-guid="buttonu11113_content"><!-- container box -->
-                  <a href="classement.php?inf=101&sup=1000">
+                  <a href="classement.php?inf=1001&sup=100000">
       <div class="clearfix grpelem" id="u11114-6" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true"><!-- content -->
        <p><span id="u11114">Classement catégorie 4</span></p>
        <p>(plus de 1000 parties)</p>
