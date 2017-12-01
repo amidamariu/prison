@@ -84,17 +84,82 @@ function partiesjouees($tableau,$joueur)
 	return $tableau;
 }
 
+function trouveNbconfiguration($liste,$strat1,$strat2)
+// cette fonction trouve le nombre de duo de coups dans la liste des parties
+{
+    $Nbtype=0;
+    //var_dump(sizeof($liste));
+    for ($i=0;$i<sizeof($liste);$i++)
+    {
+        if (($liste[$i]['Coup2']==$strat1) and ($liste[$i]['Coup1']==$strat2))
+        {
+            $Nbtype++;
+            //var_dump($Nbtype);
+        }
+    }
+    return $Nbtype;
+}
+
+function afficherstatistiques($listesparties)
+// fonction qui affiche les statistiques extractibles du tableau $listesparties
+{
+	$i=0;
+	while (($listesparties[$i]['Coup1']!=0) and ($listesparties[$i]['Coup2']!=0) and ($i<(sizeof($listesparties)-1)))
+	{
+	    $i++;
+	}
+	if (($listesparties[$i]['Coup1']!=0) and ($listesparties[$i]['Coup2']==0))
+	{
+	    echo ('A trahi en premier<br>');
+	    $GLOBALS['NombreMechancetePremier']++;
+	}
+	elseif (($listesparties[$i]['Coup1']==0) and ($listesparties[$i]['Coup2']==0))
+	{
+	    echo ('A trahi en même temps que le complice<br>');
+	    $GLOBALS['NombreMechancetePartage']++;
+	}
+	elseif (($listesparties[$i]['Coup1']==0) and ($listesparties[$i]['Coup2']!=0))
+	{
+	    echo ('A été trahi en premier<br>');
+	    $GLOBALS['NombreMechanceteSubie']++;
+	}
+	else
+	{
+	    echo ('Unquement des coopérations mutuelles<br>');
+	    $GLOBALS['NombrePasDeMechancete']++;
+	}
+	$coopcoop=trouveNbconfiguration($listesparties,1,1);
+	$GLOBALS['coopcoop']=$GLOBALS['coopcoop']+$coopcoop;
+	$pourcent=100*$coopcoop/sizeof($listesparties);
+	echo ('Nombre de coopérations mutuelles : '.$coopcoop.' ('.number_format($pourcent,1).'%)<br>');
+	$coopdefe=trouveNbconfiguration($listesparties,1,0);
+	$GLOBALS['coopdefe']=$GLOBALS['coopdefe']+$coopdefe;
+	$pourcent=100*$coopdefe/sizeof($listesparties);
+	echo ('Nombre de coopérations face à une défection : '.$coopdefe.' ('.number_format($pourcent,1).'%)<br>');
+	$defecoop=trouveNbconfiguration($listesparties,0,1);
+	$GLOBALS['defecoop']=$GLOBALS['defecoop']+$defecoop;
+	$pourcent=100*$defecoop/sizeof($listesparties);
+	echo ('Nombre de défections face à une coopération : '.$defecoop.' ('.number_format($pourcent,1).'%)<br>');
+	$defedefe=trouveNbconfiguration($listesparties,0,0);
+	$GLOBALS['defedefe']=$GLOBALS['defedefe']+$defedefe;
+	$pourcent=100*$defedefe/sizeof($listesparties);
+	echo ('Nombre de défections mutuelles : '.$defedefe.' ('.number_format($pourcent,1).'%)<br>');
+	
+}
+
 //---début du code hors fonctions
 
+chdir ('..');
 //$chemin = getcwd();
 //echo $chemin;
 
 // on récupère le pseudo passé en parametre
 $pseudo = $_GET['pseudo'];
-echo $pseudo;
+echo ('Statistiques présentées pour '.$pseudo.'<br>');
+
 // on va chercher dans la base l'identifiant correspondant au pseudo
 $bdd = Connexion::bdd();
-$req = $bdd->query('SELECT Id FROM listejoueurs WHERE Pseudo='.$pseudo);
+$req = $bdd->query("SELECT Id FROM listejoueurs WHERE Pseudo='".$pseudo."'");
 $reponse = $req->fetch();
 
 //var_dump ($reponse);
@@ -113,6 +178,8 @@ if ($tableau) //il y a des parties avec le joueur passé en paramètre
 
 // On met l'identifiant du joueur passé en parametre en deuxième position s'il n'y est pas déjà, en échangeant les joueurs et leurs coups
 $tableau=placeenjoueur2($tableau,$id);
+$Nbpartiesjouees=sizeof($tableau);
+//var_dump($Nbpartiesjouees);
 
 //var_dump ($tableau);
 
@@ -121,17 +188,57 @@ $opposants=joueursdifferentsopposes($tableau);
 
 //var_dump ($opposants);
 
+// Initialisation des variables de statistiques générales, incrémentées dans les stats particulières à l'aide de GLOBALS
+$NombreMechancetePremier=0;
+$NombreMechancetePartage=0;
+$NombreMechanceteSubie=0;
+$NombrePasDeMechancete=0;
+$coopcoop=0;
+$coopdefe=0;
+$defecoop=0;
+$defedefe=0;
+
 echo 'Le nombre de complices différents rencontrés est : '.sizeof($opposants).'<br>';
+echo '<B>Statistiques selon chaque complice : </B><br>';
 
 // pour chaque complice on extrait et analyse les parties le concernant
+$compt=1;
 foreach ($opposants as $joueur)
 {
+	$adv = new joueur($joueur);
+	echo ($compt.') Contre : '.$adv->get_Pseudo().'<br>');
 	$listesparties=partiesjouees($tableau,$joueur);
 	//var_dump ($listesparties);
 	afficherstatistiques($listesparties);
+	$compt++;
 }
 
+// On affiche maintenant les statistiques tous complices confondus
+echo '<B>Statistiques générales : </B><br>';
 
+$pourcent = 100*$NombreMechancetePremier/sizeof($opposants);
+echo ('Méchanceté seule : '.$NombreMechancetePremier.' sur '.sizeof($opposants).' complices ('.number_format($pourcent,1).'%)<br>');
+
+$PourcentageMechantPartage = 100*$NombreMechancetePartage/sizeof($opposants);
+echo ('Méchanceté partagée : '.$NombreMechancetePartage.' sur '.sizeof($opposants).' complices ('.number_format($PourcentageMechantPartage,1).'%)<br>');
+
+$pourcent = 100*$NombreMechanceteSubie/sizeof($opposants);
+echo ('Méchanceté subie : '.$NombreMechanceteSubie.' sur '.sizeof($opposants).' complices ('.number_format($pourcent,1).'%)<br>');
+
+$pourcent = 100*$NombrePasDeMechancete/sizeof($opposants);
+echo ('Pas de méchanceté : '.$NombrePasDeMechancete.' sur '.sizeof($opposants).' complices ('.number_format($pourcent,1).'%)<br>');
+
+$pourcent=100*$coopcoop/$Nbpartiesjouees;
+echo ('Nombre de coopérations mutuelles : '.$coopcoop.' sur '.$Nbpartiesjouees.' rencontres ('.number_format($pourcent,1).'%)<br>');
+
+$pourcent=100*$coopdefe/$Nbpartiesjouees;
+echo ('Nombre de coopérations face à une défection : '.$coopdefe.' sur '.$Nbpartiesjouees.' rencontres ('.number_format($pourcent,1).'%)<br>');
+
+$pourcent=100*$defecoop/$Nbpartiesjouees;
+echo ('Nombre de défections face à une coopération : '.$defecoop.' sur '.$Nbpartiesjouees.' rencontres ('.number_format($pourcent,1).'%)<br>');
+
+$pourcent=100*$defedefe/$Nbpartiesjouees;
+echo ('Nombre de défections mutuelles : '.$defedefe.' sur '.$Nbpartiesjouees.' rencontres ('.number_format($pourcent,1).'%)<br>');
 
 }
 else // pas de parties jouées

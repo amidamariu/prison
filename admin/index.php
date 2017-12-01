@@ -11,9 +11,13 @@ include_once '../html/entete.php';
 <a href="voirparties.php?duree=15">Voir les parties jouées depuis moins de 15 minutes</a><br>
 <a href="voirparties.php?duree=100">Voir les parties jouées depuis moins d'une heure</a><br>
 <a href="voirparties.php?duree=10000">Voir toutes les parties jouées</a><br>
+<a href="classement2.php?inf=1&sup=10"> classement catégorie 1 </a><br>
+<a href="classement2.php?inf=11&sup=100"> classement catégorie 2 </a><br>
+<a href="classement2.php?inf=101&sup=1000"> classement catégorie 3 </a><br>
+<a href="classement2.php?inf=1001&sup=10000"> classement catégorie 4 </a><br>
+
 
 <?php
 
 include '../html/end.php';
-
 ?>

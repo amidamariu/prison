@@ -27,11 +27,11 @@ function ajouterLigne()
 setInterval(ajouterLigne,3000);
 
 </script>
-
+<center>
 <table id="tableau" border="1">
 	
 </table>
-
+</center>
 
 
 

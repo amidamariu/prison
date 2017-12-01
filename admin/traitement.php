@@ -29,19 +29,19 @@ foreach ( $tab  as $result)
 	echo '<td>'.$date->format("H:i:s").'</td>';
 	if($result["Coup1"]==1)
 	{
-		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur1"]) . "</td>";
+		echo '<td style="color:green" > <font size="+3"> ' . Joueur::Pseudo_by_id($result ["Joueur1"]) . "</font> </td>";
 	}
 	if($result["Coup1"]==0)
 	{
-		echo '<td style="color:red" >' . Joueur::Pseudo_by_id($result ["Joueur1"]). "</td>";
+		echo '<td style="color:red" > <font size="+3"> ' . Joueur::Pseudo_by_id($result ["Joueur1"]). "</font> </td>";
 	}
 	if($result["Coup2"]==1)
 	{
-		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</td>";
+		echo '<td style="color:green" > <font size="+3"> ' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</font> </td>";
 	}
 	if($result["Coup2"]==0)
 	{
-		echo '<td style="color:red" >' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</td>";
+		echo '<td style="color:red" > <font size="+3"> ' . Joueur::Pseudo_by_id($result ["Joueur2"]). "</font> </td>";
 	}
 	
 	echo "</tr>";

@@ -515,7 +515,7 @@ function recupereclassement($inf,$sup)
 }
 
 
-function ecrireclassement($inf,$sup)
+function ecrireclassement($inf,$sup,$admin = false)
 {
 	$tableau = recupereclassement($inf,$sup);
 	//var_dump($tableau);
@@ -530,11 +530,18 @@ function ecrireclassement($inf,$sup)
 		{
 			if (($tableau[$i]['score_moyen']==$scoremoyenprecedent) and ($tableau[$i]['Nbpartiesjouees']==$Nbpartiesprecedentes))
 			{
+				if($admin)
+				{
+				echo '<tr><td align="center" >'.$placeprecedente.'</td><td align="center" > <a href="analysejoueur.php?pseudo='.$tableau[$i]['Pseudo'].'">'.$tableau[$i]['Pseudo'].'</a></td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				}
+				else
+				{
 				echo '<tr><td align="center" >'.$placeprecedente.'</td><td align="center" >'.$tableau[$i]['Pseudo'].'</td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				}
 			}
 			else
 			{
-				echo '<tr><td align="center">'.strval($i+1).'</td align="center"><td align="center">'.$tableau[$i]['Pseudo'].'</td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
+				echo '<tr><td align="center">'.strval($i+1).'</td><td align="center" > <a href="analysejoueur.php?pseudo='.$tableau[$i]['Pseudo'].'">'.$tableau[$i]['Pseudo'].'</a></td><td align="center">'.number_format($tableau[$i]['score_moyen'],4).'</td><td align="center">'.$tableau[$i]['Nbpartiesjouees'].'</td></tr>' ;
 				$placeprecedente=strval($i+1);
 				$scoremoyenprecedent=$tableau[$i]['score_moyen'];
 				$Nbpartiesprecedentes=$tableau[$i]['Nbpartiesjouees'];
