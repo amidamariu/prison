@@ -22,8 +22,8 @@ include_once ROOT."class/partieencours_class.php";
 	$partie->set_coup(2,rand(0,1));
 	$partie->set_auto(2,TRUE);
 	}
-	$partie->stock();
 	sleep(5);
+	$partie->stock();
     $partie->suppr();
     
 ?>

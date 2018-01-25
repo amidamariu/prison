@@ -14,6 +14,10 @@ class joueur
 
   $sql = 'SELECT * FROM listejoueurs WHERE id='.$id.' ';
 $rep = $bdd->query($sql);
+if($rep == null)
+{
+	echo $sql;
+}
 $donnee = $rep->fetch();
   $this->_id = $id;
   $this->_Pseudo = $donnee["Pseudo"];
