@@ -18,24 +18,17 @@ class partieencours
   	$id=uniqid();
   	$partie=new partieencours($id);
   	$Date = date("Y-m-d H:i:s");
-  	$sql = "SELECT * FROM `partieencours` WHERE (`Id_joueur1` =".$joueur1." AND `Id_joueur2`="."$joueur2".") OR (`Id_joueur1` =".$joueur2." AND `Id_joueur2`="."$joueur1".") ";
-  	$req = $bdd->query($sql);
-  	$reponse = $req->fetch();
+  	
+  	$reponse == TRUE;
+
   	if($reponse != FALSE)
   	{
-  		$prec = new partieencours($reponse['Id']);
-  		if($prec->get_coup(1)==NULL)
-  		{
-  			$prec->set_coup(1,rand(0,1));
-  			$prec->set_auto(1,TRUE);
-  		}
-  		if($prec->get_coup(2)==NULL)
-  		{
-  			$prec->set_coup(2,rand(0,1));
-  			$prec->set_auto(2,TRUE);
-  		}
-  		$prec->stock();
-  		$prec->suppr();
+  		$sql = "SELECT * FROM `partieencours` WHERE (`Id_joueur1` =".$joueur1." AND `Id_joueur2`="."$joueur2".") OR (`Id_joueur1` =".$joueur2." AND `Id_joueur2`="."$joueur1".") ";
+  		$req = $bdd->query($sql);
+  		$reponse = $req->fetch();
+  		
+  sleep(1);
+  
   	}
  	
   	
@@ -266,7 +259,7 @@ public static function find_last($joueur2)
 public static function find_new($joueur2)
 {
 	$bdd = Connexion::bdd();
-	$sql = 'SELECT * FROM partieencours WHERE Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.' AND NEW=TRUE ORDER BY date DESC';
+	$sql = 'SELECT * FROM partieencours WHERE (Id_joueur2='.$joueur2.' OR Id_joueur1='.$joueur2.') AND NEW=TRUE ORDER BY date DESC';
 	$rep = $bdd->query($sql);
 	$donnee = $rep->fetch();
 	if($donnee==null)
