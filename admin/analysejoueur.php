@@ -252,6 +252,76 @@ else // le pseudo n'a pas été trouvé dans la liste des joueurs
 	echo 'Le joueur '.$pseudo.' n\'est pas dans la base des joueurs';
 }
 
+
+
+
+$requete = 'SELECT * FROM `listeparties` WHERE Joueur1 ='.$id.' OR Joueur2='.$id.' ORDER BY `date` ASC';
+$req = $bdd->query($requete);
+$tableau= $req->fetchAll();
+
+
+echo '<br><br>';
+echo '<table>';
+echo '<tr><td>Date</td><td>Joueur</td><td></td><td>Adversaire</td></tr>';
+for ($i = 0; $i < count($tableau); $i++)
+{
+	echo "<tr>";
+	echo '<td>'.$tableau[$i]["date"].'</td>';
+	
+	if($tableau[$i]["Joueur1"]== $id)
+	{
+	if($tableau[$i]["Coup1"]==1)
+	{
+		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]) . "</td>";
+	}
+	if($tableau [$i]["Coup1"]==0)
+	{
+		echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]). "</td>";
+	}
+	echo '<td>|-----------|</td>';
+	if($tableau [$i]["Coup2"]==1)
+	{
+		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
+	}
+	if($tableau [$i]["Coup2"]==0)
+	{
+		echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
+	}
+	echo "</tr>";
+	}
+	else
+	{
+		
+	
+	
+		if($tableau [$i]["Coup2"]==1)
+		{
+			echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
+		}
+		if($tableau [$i]["Coup2"]==0)
+		{
+			echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
+		}
+		
+		echo '<td>|-----------|</td>';
+		if($tableau[$i]["Coup1"]==1)
+		{
+			echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]) . "</td>";
+		}
+		if($tableau [$i]["Coup1"]==0)
+		{
+			echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]). "</td>";
+		}
+		echo "</tr>";
+		
+	}
+		
+	}
+
+
+echo '<table>';
+
+
 echo '<br><br><a href="index.php">retour aux fonctions de gestion</a><br>';
 
 include_once 'html/end.php';

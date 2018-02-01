@@ -19,9 +19,9 @@ class partieencours
   	$partie=new partieencours($id);
   	$Date = date("Y-m-d H:i:s");
   	
-  	$reponse == TRUE;
+  	$reponse = TRUE;
 
-  	if($reponse != FALSE)
+  	while($reponse != FALSE)
   	{
   		$sql = "SELECT * FROM `partieencours` WHERE (`Id_joueur1` =".$joueur1." AND `Id_joueur2`="."$joueur2".") OR (`Id_joueur1` =".$joueur2." AND `Id_joueur2`="."$joueur1".") ";
   		$req = $bdd->query($sql);
