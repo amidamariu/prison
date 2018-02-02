@@ -68,6 +68,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     
     ?>
     </div>
+        <?php 
+    if( joueur::connected()){
+    	
+    	?>
+    
     <div class="clearfix colelem shared_content" id="u9798-4" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u9798-4_content"><!-- content -->
      <p>Jouer :</p>
     </div>
@@ -81,6 +86,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <img class="block temp_no_img_src" id="u10338_img" data-orig-src="images/boutons230x30_strat.png?crc=3973299437" alt="" data-heightwidthratio="0.13043478260869565" data-image-width="230" data-image-height="30" src="images/blank.gif?crc=4208392903"/>
     </a>
     </div>
+        <?php 
+    }
+    ?>
     <a class="nonblock nontext shadow rounded-corners clip_frame colelem" id="u9989" href="description.php"><!-- image --><img class="block temp_no_img_src" id="u9989_img" data-orig-src="images/carte_regles1.png?crc=364550514" alt="" data-heightwidthratio="1.490909090909091" data-image-width="55" data-image-height="82" src="images/blank.gif?crc=4208392903"/></a>
     <div class="clearfix colelem" id="pu9568"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u9568" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u9568_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
