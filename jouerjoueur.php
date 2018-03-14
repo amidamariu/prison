@@ -20,6 +20,7 @@ if (! joueur::connected ()) {
     $adv = new joueur($partie->get_joueur(1));
     }
     
+    /*
     if($adv->is_strat())
     {
     	$strat = strategie::strat_by_id_joueur($adv->get_id());
@@ -28,6 +29,7 @@ if (! joueur::connected ()) {
     	
     	
     }
+    */
 //    echo "Vous allez jouer contre:" . $adv->get_Pseudo() . "<br>";
     
     if($adv->is_strat())
@@ -221,6 +223,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <?php     
           if($adv->is_strat())
     {
+    	$strat = strategie::strat_by_id_joueur($adv->get_id());
     echo '<br> <table border=1 cellspacing=0 cellpadding=5 wight=100% ><td>'.$strat->get_desc().'</td></table>';
     }
     ?>

@@ -33,7 +33,7 @@ if($adv == 0) //si on n'a pas trouvé d'adverssaire
 	{
 		$strat = new strategie();
 		$partie = partieencours::ajouter($jou->get_id(),$strat->get_id_joueur());
-		$jou->unset_attente();
+		// $jou->unset_attente();
 		$partie->set_old();
 		xmladv($strat->get_nom(),$partie->get_id(),TRUE,'S');  
 	}

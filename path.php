@@ -5,6 +5,7 @@ chdir(ROOT);
 define('ROOTWEB',$_SERVER['SERVER_NAME'].DOSSIER);
 include_once ROOT.'fonction/fonctions.php';
 include_once ROOT."class/joueur_class.php";
+include_once ROOT."class/strategie_class.php";
 session_start();
 if(joueur::connected())
 {
