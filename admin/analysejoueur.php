@@ -1,3 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+</head>
+<body>
+
+
+
 <?php
 chdir ('..');
 include_once 'path.php';
@@ -261,8 +277,21 @@ $tableau= $req->fetchAll();
 
 
 echo '<br><br>';
-echo '<table>';
-echo '<tr><td>Date</td><td>Joueur</td><td></td><td>Adversaire</td></tr>';
+
+echo '
+<div style="overflow-x:auto;">
+<table id="example" class="display">
+<thead>
+   <tr>
+       <td>Date </td>
+       <td>Joueur </td>
+       <td>Complice</td>
+   </tr>
+</thead>
+';
+
+
+// echo '<tr><td>Date</td><td>Joueur</td><td></td><td>Complice</td></tr>';
 for ($i = 0; $i < count($tableau); $i++)
 {
 	echo "<tr>";
@@ -278,7 +307,6 @@ for ($i = 0; $i < count($tableau); $i++)
 	{
 		echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]). "</td>";
 	}
-	echo '<td>|-----------|</td>';
 	if($tableau [$i]["Coup2"]==1)
 	{
 		echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
@@ -302,8 +330,6 @@ for ($i = 0; $i < count($tableau); $i++)
 		{
 			echo '<td style="color:red" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur2"]). "</td>";
 		}
-		
-		echo '<td>|-----------|</td>';
 		if($tableau[$i]["Coup1"]==1)
 		{
 			echo '<td style="color:green" >' . Joueur::Pseudo_by_id($tableau [$i]["Joueur1"]) . "</td>";
@@ -319,11 +345,24 @@ for ($i = 0; $i < count($tableau); $i++)
 	}
 
 
-echo '<table>';
+echo '<table> </div>';
 
 
 echo '<br><br><a href="index.php">retour aux fonctions de gestion</a><br>';
 
-include_once 'html/end.php';
+?>
 
+
+<script>
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "order": [[ 1, "desc" ]],
+        "paging":   false
+    } );
+} );
+</script>
+
+<?php
+include_once 'prison/html/end.php';
 ?>

@@ -2,19 +2,11 @@
 include_once 'path.php';
 
 
-if(!joueur::connected())
-{
-	echo "vous devez être connecter pour accéder à cette page";
-}
-else 
-{
-	
 	
 	if(!isset($_GET['inf'],$_GET['sup']))
 	{
 		
-	
-		?>
+?>
 		
 		
 		<!DOCTYPE html>
@@ -70,6 +62,21 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
      </div>
 
+
+
+
+<?php if(!joueur::connected())
+{
+?>
+    <div class="clearfix colelem shared_content" id="u10205-22" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u10205-22_content"><!-- content -->
+	
+vous devez être connecté pour afficher cette page
+</div>	
+<?php 
+}
+else
+{
+?>
     
      <div class="Button rounded-corners shadow clearfix colelem shared_content" id="buttonu10966" data-visibility="changed" style="visibility:hidden" data-content-guid="buttonu10966_content"><!-- container box -->
        <a href="classement.php?inf=1&sup=10">
@@ -96,6 +103,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       </a>
      </div>
+     
      <div class="Button rounded-corners shadow clearfix colelem shared_content" id="buttonu11113" data-visibility="changed" style="visibility:hidden" data-content-guid="buttonu11113_content"><!-- container box -->
                   <a href="classement.php?inf=1001&sup=100000">
       <div class="clearfix grpelem" id="u11114-6" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true"><!-- content -->
@@ -105,6 +113,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        </a>
      </div>
     </div>
+    
+    <?php } ?>
+    
+    
+    
     <div class="verticalspacer" data-offset-top="417" data-content-above-spacer="418" data-content-below-spacer="89" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
     <a class="nonblock nontext clip_frame grpelem" id="u11352" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u11352_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
     <a class="nonblock nontext clearfix grpelem shared_content" id="u11351-4" href="licence-et-cr%c3%a9dits.html" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u11351-4_content"><!-- content --><p>Licence et crédits</p></a>
@@ -413,7 +426,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 }
 
 
-}
+
 	
 ?>
 

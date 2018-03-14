@@ -80,10 +80,14 @@ function decremete() {
 	div.innerHTML = 'Coup automatique dans '+tempsrestant+' sec';
 	tempsrestant = tempsrestant - 1;
 	}
+	if(tempsrestant == 0)
+	{
+	div.innerHTML = 'Coup automatique imminent !';
+	}
 }
 
 
-var tempsrestant=10;
+var tempsrestant=20;
 setInterval(decremete,1000);
 
 </script>
@@ -186,6 +190,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <div class="clearfix colelem shared_content" id="u11234-7" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u11234-7_content"><!-- content -->
 <p id="u9729-5">Vous êtes <a class="nonblock" href="profil.php"> <?php if( joueur::connected()) {echo $jou->get_Pseudo();} ?> </a> parmi <?php echo joueur::get_atifs(); ?> joueur.se.s connecté.e.s</p>
+    		<div id=timer> <br> </div>
     		<div id=test> Personne n'a joué</div>     </div>
      <div class="clearfix colelem shared_content" id="u10011-5" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u10011-5_content"><!-- content -->
      <p><span id="u10011">Vous allez jouer contre :</span> <?php echo $adv->get_Pseudo(); ?></p>
