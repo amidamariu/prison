@@ -123,16 +123,18 @@ public function stock()
 	$joueur2 = $this->get_joueur(2);
 	$coup1 = $this->get_coup(1);
 	$coup2 = $this->get_coup(2);
+	$id = $this->get_id();
 	
 		$bdd = Connexion::bdd();
 		
-		$req = $bdd->prepare('INSERT INTO `listeparties`  (`Joueur1`, `Joueur2`, `Coup1`, `Coup2`)
-VALUES(:joueur1, :joueur2, :coup1, :coup2)');
+		$req = $bdd->prepare('INSERT INTO `listeparties`  (`Joueur1`, `Joueur2`, `Coup1`, `Coup2`, `ex_id` )
+VALUES(:joueur1, :joueur2, :coup1, :coup2, :ex_id)');
 		$req->execute(array(
 				'joueur1' => $joueur1,
 				'joueur2' => $joueur2,
 				'coup1' => $coup1,
-				'coup2' => $coup2
+				'coup2' => $coup2,
+				'ex_id' => $id
 		)) or die(print_r($req->errorInfo()));
 		
 		
