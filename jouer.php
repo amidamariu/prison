@@ -138,8 +138,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 
 
     <div class="clearfix colelem" id="pu1672"><!-- group -->
-     <a class="nonblock nontext clip_frame grpelem" id="u1672" href="http://www.u-pec.fr/"><!-- image --><img class="block temp_no_img_src" id="u1672_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
-     <a class="nonblock nontext clearfix grpelem shared_content" id="u1674-4" href="licence-et-cr%c3%a9dits.html" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u1674-4_content"><!-- content --><p>Licence et crédits</p></a>
+     <a class="nonblock nontext clip_frame grpelem" id="u1672"><!-- image --><img class="block temp_no_img_src" id="u1672_img" data-orig-src="images/upec_cmjn185.png?crc=449675334" alt="" data-heightwidthratio="0.42162162162162165" data-image-width="185" data-image-height="78" src="images/blank.gif?crc=4208392903"/></a>
+     <a class="nonblock nontext clearfix grpelem shared_content" id="u1674-4" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true" data-content-guid="u1674-4_content"><!-- content --><p>Licence et crédits</p></a>
     </div>
    </div>
   </div>

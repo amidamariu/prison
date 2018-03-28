@@ -42,6 +42,7 @@ $donnee = $rep->fetch();
   $this->_id = $donnee["id"];
   $this->_id_joueur = $donnee["id_joueur"];
   $rep = $bdd->query('SELECT * FROM `listejoueurs` WHERE Id ='.$this->_id_joueur);
+
   $donnee = $rep->fetch();
   
   if ($donnee == null)
@@ -98,7 +99,7 @@ $donnee = $rep->fetch();
   
       public function jouer($joueur) 
   {
-	
+
 	
 	if($this->_id == 1) // strategie gentille
 	{

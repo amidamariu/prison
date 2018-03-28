@@ -7,11 +7,16 @@ define('ROOTWEB',$_SERVER['SERVER_NAME'].DOSSIER);
 include_once ROOT.'fonction/fonctions.php';
 include_once ROOT."class/joueur_class.php";
 include_once ROOT."class/strategie_class.php";
+include_once ROOT."class/partieencours_class.php";
 
-$jou = new joueur(228);
-$strat = new strategie(3);
 
+
+
+$strat = new strategie(9);
 echo $strat->jouer(228);
 
+echo "<br>----<br>";
+
+$partie = partieencours::ajouter(228, 13);
 
 ?>

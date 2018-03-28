@@ -213,12 +213,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <div class="clearfix colelem shared_content" id="pu10020-4" data-content-guid="pu10020-4_content"><!-- group -->
       <div class="clearfix grpelem" id="u10020-4" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true"><!-- content -->
-       <p>Historique récent de <?php echo $adv->get_Pseudo(); ?> :</p>
+       <p>Historique récent de <?php echo $adv->get_Pseudo(); ?>  :  <br> (de la plus récente à la plus ancienne) <br> </p>
                   <?php  historique_muse($jou->get_id(),$adv->get_id(),1); ?>
        
       </div>
       <div class="clearfix grpelem" id="u10023-4" data-muse-temp-textContainer-sizePolicy="true" data-muse-temp-textContainer-pinning="true"><!-- content -->
-       <p>Historique de vos rencontres avec <?php echo $adv->get_Pseudo() ;?> : </p>
+       <p>Historique de vos rencontres avec <?php echo $adv->get_Pseudo() ;?> :  <br> (de la plus récente à la plus ancienne) <br> </p>
                   <?php  historique_muse($jou->get_id(),$adv->get_id(),2); ?>
        
       </div>

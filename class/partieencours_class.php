@@ -55,8 +55,7 @@ $jou2 = new joueur($joueur2);
 if($jou2->is_strat())
 {
 	$strat = strategie::strat_by_id_joueur($joueur2);
-
-	$coupstrat = $strat->jouer($joueur2);
+	$coupstrat = $strat->jouer($joueur1);
 	$partie->set_coup(2, $coupstrat);
 
 }

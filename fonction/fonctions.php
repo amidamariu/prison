@@ -182,7 +182,7 @@ function historique($IDjou,$IDadv)
 $jou = new joueur($IDjou);
 $adv = new joueur($IDadv);
 
-echo "<br>Historique récent de toutes les parties de ce joueur : <br>";
+echo "<br>Historique récent de toutes les parties de ce joueur : <br> (de la plus récente à la plus ancienne) <br>";
 
 echo "<table border=1 cellspacing=0 cellpadding=5>";
 
@@ -221,7 +221,7 @@ foreach ( $hist as $result ) {
 echo "</table>";
 }
 
-echo "<br>Historique de vos rencontres avec ce joueur : <br>";
+echo "<br>Historique de vos rencontres avec ce joueur : <br> (de la plus récente à la plus ancienne) <br>";
 $hist = get_historique2 ( $IDadv, $IDjou);
 
 
