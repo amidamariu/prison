@@ -400,8 +400,35 @@ return($rep->fetch());
   { 
   	$bdd = Connexion::bdd();
   	
+  	$sql = "LOCK TABLES `attente`WRITE";
+  	$rep = $bdd->query($sql);
+  	
+  	
+
+  	
+  	$req = $bdd->query('SELECT * FROM attente WHERE id='.$this->get_id());
+$reponse = $req->fetch();
+
+if($reponse==null)
+{
+	
+	$sql = "UNLOCK TABLES";
+	$rep = $bdd->query($sql);
+	
+	return FALSE;
+}
+  			
+  			
   	$sql = 'DELETE FROM attente WHERE Id='.$this->get_id();
   	$bdd->query($sql);
+  	
+  	
+  	$sql = "UNLOCK TABLES";
+  	$rep = $bdd->query($sql);
+  	
+  	return true;
+  	
+  	
 
   }
   

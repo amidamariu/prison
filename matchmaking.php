@@ -33,9 +33,30 @@ if($adv == 0) //si on n'a pas trouvé d'adverssaire
 	{
 		$strat = new strategie();
 		$partie = partieencours::ajouter($jou->get_id(),$strat->get_id_joueur());
-		$jou->unset_attente();
-		$partie->set_old();
-		xmladv($strat->get_nom(),$partie->get_id(),TRUE,'S');  
+		
+		
+		
+		if($jou->unset_attente())
+		{
+			$partie->set_old();
+			xmladv($strat->get_nom(),$partie->get_id(),TRUE,'S');  
+		}
+		else 
+		{
+			
+			$partie = partieencours::find_new($jou->get_id());
+			if( $partie != null)
+			{
+				$partie->set_old();
+				$trouve=true;
+				xmladv(Joueur::Pseudo_by_id($partie->get_joueur(1)),$partie->get_id(),FALSE,'J');
+		
+			}
+			
+			
+			
+		}
+	
 	}
 }
 else //si on a on extrait un adversaire de la liste d'attente
