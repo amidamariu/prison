@@ -115,9 +115,10 @@ $donnee = $rep->fetch();
 		$id = $this->_id_joueur;
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY `date` DESC LIMIT 1');
 		$reponse = $req->fetch();
 
+		
 		if( $reponse == NULL )
 		{
 			return 1;
@@ -140,7 +141,7 @@ $donnee = $rep->fetch();
 		$id = $this->_id_joueur;
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 1');
 		$reponse = $req->fetch();
 
 		if( $reponse == NULL )
@@ -174,7 +175,7 @@ $donnee = $rep->fetch();
 		$id = $this->_id_joueur;
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 1');
 		$reponse = $req->fetch();
 
 		if( $reponse == NULL )
@@ -229,7 +230,7 @@ $donnee = $rep->fetch();
 		$id = $this->_id_joueur;
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
-		$req = $bdd->query('SELECT COUNT(*) AS Nb FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 11');	
+		$req = $bdd->query('SELECT COUNT(*) AS Nb FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 11');	
 	$reponse = $req->fetch();
 	
 	 
@@ -240,7 +241,7 @@ $donnee = $rep->fetch();
 		else
 		{
 			
-			$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');	
+			$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 1');	
 			$reponse = $req->fetch();
 			
 			if($reponse["Joueur1"] == $id)
@@ -290,7 +291,7 @@ $donnee = $rep->fetch();
 		$id = $this->_id_joueur;
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC');
 		$hist = $req->fetchAll();
 		$new = true;
 		$param = 0;
@@ -374,7 +375,7 @@ $donnee = $rep->fetch();
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
 			
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 1');
 		$reponse = $req->fetch();
 
 			if( $reponse == NULL )
@@ -452,7 +453,7 @@ $donnee = $rep->fetch();
 		$id2 = $joueur;
 		$bdd = Connexion::bdd();
 		
-			$req = $bdd->query('SELECT COUNT(*) AS Nb FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 11');	
+			$req = $bdd->query('SELECT COUNT(*) AS Nb FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 11');	
 	$reponse = $req->fetch();
 	$param = $reponse["Nb"];
 	if($param > 200)
@@ -464,7 +465,7 @@ $donnee = $rep->fetch();
 		$param = 1 - $param/400;
 	}	
 	
-		$req = $bdd->query('SELECT * FROM listeparties WHERE (Joueur1 ='.$id.' AND Joueur2 ='.$id2.') OR (Joueur1 ='.$id2.' AND Joueur2 ='.$id.') ORDER BY date DESC LIMIT 1');
+		$req = $bdd->query('SELECT * FROM listeparties WHERE (`Joueur1` ='.$id.' AND `Joueur2` ='.$id2.') OR (`Joueur1` ='.$id2.' AND `Joueur2` ='.$id.') ORDER BY date DESC LIMIT 1');
 		$reponse = $req->fetch();
 
 		if( $reponse == NULL )
