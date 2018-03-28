@@ -3,6 +3,9 @@
 class Connexion {
      
     public static function bdd() {
+    	
+    	if(!isset($GLOBALS['db']))
+    	{
         // fichier contenant les informations pour se connecter
         $fichier = ROOT.'config/sql.ini';
         if(file_exists($fichier)) {
@@ -19,9 +22,15 @@ class Connexion {
         } catch (Exception $e) {
         die('Erreur : '. $e->getMessage());
         }
-            return $bdd;
+        
         }
-	
+ 
+        $GLOBALS['db'] = $bdd;
+          
+        }
+        
+        return $GLOBALS['db'];
+        
     }
 }
 
