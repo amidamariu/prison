@@ -399,6 +399,7 @@ return($rep->fetch());
   public function unset_attente()
   { 
   	$bdd = Connexion::bdd();
+  	
   	$sql = 'DELETE FROM attente WHERE Id='.$this->get_id();
   	$bdd->query($sql);
 
